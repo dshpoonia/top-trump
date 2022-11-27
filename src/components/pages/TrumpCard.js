@@ -25,6 +25,10 @@ const TrumpCard = ({props, onAttributeClick}) => {
 
     const [data, setData] = useState(props);
 
+    useEffect(()=>{
+        setData(props)
+    }, [props])
+
     const listItems =
         <List aria-label="stats-buttons">
             <Grid container spacing={2} columns={12}>
