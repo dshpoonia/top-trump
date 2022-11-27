@@ -8,6 +8,10 @@ const PlayerPokemon = ({id}) => {
     const [playerPokemon, setPlayerPokemon] = useState({});
     const [loaded, setLoaded] = useState(false);
 
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     useEffect(() => {
         let url = "https://pokeapi.co/api/v2/pokemon/" + id;
         fetch(url)
@@ -18,34 +22,25 @@ const PlayerPokemon = ({id}) => {
                     pokemon.image = result.sprites.other.home.front_default;
                     pokemon.title = result.name.toUpperCase();
                     pokemon.avatarHeader = result.name.toUpperCase()[0];
-                    pokemon.subheader = result.types[0].type.name;
+                    pokemon.subheader = capitalizeFirstLetter(result.types[0].type.name);
                     pokemon.attributes = [];
 
                     let s = {};
-                    s.name = "height";
+                    s.name = "Height";
                     s.value = result.height;
-                    s.action = () => {
-                        alert("height");
-                    };
                     pokemon.attributes.push(s);
 
                     s = {};
-                    s.name = "weight";
+                    s.name = "Weight";
                     s.value = result.weight;
-                    s.action = () => {
-                        alert("weight");
-                    };
                     pokemon.attributes.push(s);
 
                     result.stats.forEach(function (stat) {
 
                         if (stat.stat.name.indexOf("special") == -1) {
                             s = {};
-                            s.name = stat.stat.name;
+                            s.name = capitalizeFirstLetter(stat.stat.name);
                             s.value = stat.base_stat;
-                            s.action = () => {
-                                alert(stat.stat.name);
-                            };
                             pokemon.attributes.push(s);
                         }
                     }, result.attributes);

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="Pokemon display">
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="Pokemon card color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemonDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemonDetails.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +159,7 @@
       <workItem from="1553525344314" duration="7720000" />
       <workItem from="1553538181795" duration="4963000" />
       <workItem from="1553601623938" duration="1765000" />
-      <workItem from="1669564999421" duration="6908000" />
+      <workItem from="1669564999421" duration="8677000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -168,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669576153270</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Pokemon card color">
+      <created>1669576586241</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669576586241</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -241,7 +248,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Pokemon display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pokemon display" />
+    <MESSAGE value="Pokemon card color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pokemon card color" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">

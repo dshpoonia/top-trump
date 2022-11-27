@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import TrumpCard from "../pages/TrumpCard";
-import {pokemonData} from "../../variables/pokemon";
 import {red, grey, blue, brown, green, pink, purple, yellow, teal,} from "@mui/material/colors";
 
 
