@@ -69,16 +69,11 @@ const TrumpCard = ({props}) => {
         <Card sx={{maxWidth: 345, bgcolor: data.cardBackground}}>
             <CardHeader
                 avatar={
-                    <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
+                    <Avatar sx={{bgcolor: red[500]}} aria-label="avatar">
                         {data.avatarHeader}
                     </Avatar>
                 }
-                action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon/>
-                    </IconButton>
-                }
-                title={data.title}
+                title={<Typography variant="h6">{data.title}</Typography>}
                 subheader={data.subheader}
             />
             <CardMedia
