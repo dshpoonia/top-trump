@@ -1,10 +1,10 @@
 export const defaultPlayerCardMap = {
     p1: {
-        name: "guest",
+        name: "Guest",
         cards: []
     },
     b1:{
-        name: "bot",
+        name: "Bot",
         cards: []
     }
 }

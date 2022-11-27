@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="pokemon layout fixes">
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="att comparison">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/variables/playerCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/variables/playerCards.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +113,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/dpoonia/Projects/github/top-trump/src/components/pokemon",
+    "last_opened_file_path": "/Users/dpoonia/Projects/github/top-trump/src/static/images/player",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -126,7 +123,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/static/images/player" />
       <recent name="$PROJECT_DIR$/src/components/pokemon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/static" />
+      <recent name="$PROJECT_DIR$/src/static/static" />
     </key>
   </component>
   <component name="RunManager">
@@ -163,7 +165,7 @@
       <workItem from="1553525344314" duration="7720000" />
       <workItem from="1553538181795" duration="4963000" />
       <workItem from="1553601623938" duration="1765000" />
-      <workItem from="1669564999421" duration="14791000" />
+      <workItem from="1669564999421" duration="17866000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -207,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669581771282</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="att comparison">
+      <created>1669584546745</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669584546745</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -285,7 +294,8 @@
     <MESSAGE value="pokemon card fix" />
     <MESSAGE value="attribute clicked callback" />
     <MESSAGE value="pokemon layout fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="pokemon layout fixes" />
+    <MESSAGE value="att comparison" />
+    <option name="LAST_COMMIT_MESSAGE" value="att comparison" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">

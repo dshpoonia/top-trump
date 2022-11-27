@@ -3,6 +3,9 @@ import React, {useEffect, useState} from "react";
 import PlayerPokemon from "./PlayerPokemon";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import {PlayerCard} from "../pages/PlayerCard";
+import Divider from "@mui/material/Divider";
 
 const InitLayout = ({playerCardsMap}) => {
 
@@ -47,6 +50,22 @@ const InitLayout = ({playerCardsMap}) => {
             </Grid>
             <Grid item xs={2}>
             </Grid>
+
+            <Grid item xs={2}>
+            </Grid>
+
+
+            <Grid id="player-info-grid" item xs={3} alignItems="flex-end">
+                <PlayerCard playerId = "p1" playerCardsMap = {playerCardsMap}/>
+            </Grid>
+            <Grid item xs={2}>
+            </Grid>
+            <Grid id="bot-info-grid" item xs={3} alignItems="flex-start">
+                <PlayerCard playerId = "b1" playerCardsMap = {playerCardsMap}/>
+            </Grid>
+            <Grid item xs={2}>
+            </Grid>
+
         </Grid>
     );
 };
