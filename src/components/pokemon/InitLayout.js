@@ -10,8 +10,13 @@ import Divider from "@mui/material/Divider";
 const InitLayout = ({playerCardsMap}) => {
 
     console.log("player card map", playerCardsMap);
-    const [payerTurn, setPlayerTurn] = useState("p1");
+    const [playerCards, setPlayerCards] = useState(playerCardsMap)
+    const [playerTurn, setPlayerTurn] = useState("p1");
     const [attributeCheck, setAttributeCheck] = useState({});
+
+    useEffect(() => {
+        setPlayerCards(playerCardsMap)
+    }, [playerCardsMap])
 
     const onAttributeClick = (attributeName, attributeValue) =>{
         let a = {};
@@ -24,9 +29,27 @@ const InitLayout = ({playerCardsMap}) => {
 
     const attributeCompareCallback = (playerId, compareResult) =>{
 
+        let winnerPlayer = "";
+        let losingPlayer = "";
+
         if(compareResult < 0){
-            alert("Player 1 lost");
+            winnerPlayer = playerId;
+            losingPlayer = playerTurn;
+        }else{
+            winnerPlayer = playerTurn;
+            losingPlayer = playerId;
         }
+
+        let cardsToMoveBack = playerCards[winnerPlayer].cards[0];
+        let cardsToBeTransferred = playerCards[losingPlayer].cards[0];
+
+        playerCards[winnerPlayer].cards.splice(0, 1);
+        playerCards[losingPlayer].cards.splice(0, 1);
+        playerCards[winnerPlayer].cards.push(cardsToMoveBack);
+        playerCards[winnerPlayer].cards.push(cardsToBeTransferred);
+
+        setPlayerCards(playerCardsMap);
+
     }
 
 
@@ -56,12 +79,12 @@ const InitLayout = ({playerCardsMap}) => {
 
 
             <Grid id="player-info-grid" item xs={3} alignItems="flex-end">
-                <PlayerCard playerId = "p1" playerCardsMap = {playerCardsMap}/>
+                <PlayerCard playerId = "p1" playerCardsMap = {playerCards}/>
             </Grid>
             <Grid item xs={2}>
             </Grid>
             <Grid id="bot-info-grid" item xs={3} alignItems="flex-start">
-                <PlayerCard playerId = "b1" playerCardsMap = {playerCardsMap}/>
+                <PlayerCard playerId = "b1" playerCardsMap = {playerCards}/>
             </Grid>
             <Grid item xs={2}>
             </Grid>
