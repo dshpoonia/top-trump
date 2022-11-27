@@ -23,7 +23,7 @@ const TrumpCard = ({ data }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345, backgroundColor: data.cardBackground }}>
+    <Card sx={{ maxWidth: 345, backgroundColor: data.cardBackground[300] }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

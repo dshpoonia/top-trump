@@ -30,6 +30,7 @@ const PokemonPage = () => {
           result.avatarHeader = result.title[0];
           result.subheader = result.types[0].type.name;
           result.attributes = [];
+          result.cardBackground = "teal";
 
           result.stats.forEach(function (stat) {
             let s = {};
