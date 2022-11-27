@@ -20,8 +20,6 @@ const PlayerPokemon = ({id}) => {
                     pokemon.avatarHeader = result.name.toUpperCase()[0];
                     pokemon.subheader = result.types[0].type.name;
                     pokemon.attributes = [];
-                    pokemon.cardBackground = teal[300];
-                    pokemon.cardContent = "ABC";
 
                     let s = {};
                     s.name = "height";
