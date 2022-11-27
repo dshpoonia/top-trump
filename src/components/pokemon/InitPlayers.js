@@ -15,7 +15,7 @@ const InitPlayers = ({noOfPlayers, noOfBotPlayers, deckSize}) => {
         const rnd = new Srand(arr.length);
 
         for (let i = 1; i <= noOfPlayers; i++) {
-            playerCardMap[i].cards = rnd.sample(arr, deckSize);
+            playerCardMap["p" + i].cards = rnd.sample(arr, deckSize);
         }
 
         for (let i = 1; i <= noOfBotPlayers; i++) {
@@ -28,7 +28,7 @@ const InitPlayers = ({noOfPlayers, noOfBotPlayers, deckSize}) => {
 
 
     return (
-        <Grid container spacing={1} >
+        <Grid container spacing={1}>
 
             <InitLayout playerCardsMap={playerCardsMap}/>
         </Grid>

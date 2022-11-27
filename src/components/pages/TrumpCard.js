@@ -33,7 +33,9 @@ const TrumpCard = ({props, onAttributeClick}) => {
 
                         <Grid item xs={6}>
 
-                            <ListItem button onClick = {() => {onAttributeClick(attribute.name)}}>
+                            <ListItem button onClick={() => {
+                                onAttributeClick(attribute.name, attribute.value)
+                            }}>
                                 <Grid container spacing={2} columns={12}>
                                     <Grid item xs={8}>
                                         <ListItemText primary={attribute.name}/>

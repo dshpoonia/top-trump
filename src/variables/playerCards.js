@@ -1,5 +1,5 @@
 export const defaultPlayerCardMap = {
-    1: {
+    p1: {
         name: "guest",
         cards: []
     },

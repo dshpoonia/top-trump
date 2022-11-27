@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import {teal} from "@mui/material/colors";
 import PlayerPokemonDetails from "./PlayerPokemonDetails";
 
-const PlayerPokemon = ({id}) => {
+const PlayerPokemon = ({id, playerId, onAttributeClick, attributeCheck, attributeCompareCallback} ) => {
 
     const [playerPokemon, setPlayerPokemon] = useState({});
     const [loaded, setLoaded] = useState(false);
@@ -12,9 +12,18 @@ const PlayerPokemon = ({id}) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    const onAttributeClick = (attributeName) =>{
-        alert("Attribute name clicked " + attributeName);
-    }
+    useEffect( () => {
+        if(attributeCheck && attributeCheck.calculateResults){
+
+            if(playerId != attributeCheck.selectedByPlayer){
+
+                let a = playerPokemon.attributes.filter((att) => {return att.name == attributeCheck.attributeToCompare})
+                let val = a[0].value;
+                attributeCompareCallback(playerId, attributeCheck.attributeValueToCompare - val);
+            }
+        }
+    }, [attributeCheck])
+
     useEffect(() => {
         let url = "https://pokeapi.co/api/v2/pokemon/" + id;
         fetch(url)
@@ -56,7 +65,7 @@ const PlayerPokemon = ({id}) => {
                     console.log("error");
                 }
             );
-    }, []);
+    }, [id]);
 
     return (
         <div>
