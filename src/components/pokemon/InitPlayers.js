@@ -3,6 +3,7 @@ import Srand from "seeded-rand";
 import {defaultPlayerCardMap} from "../../variables/playerCards";
 import {getMasterPokemonIndex} from "./MasterPokemonIndex";
 import InitLayout from "./InitLayout";
+import Grid from "@material-ui/core/Grid";
 
 const InitPlayers = ({noOfPlayers, noOfBotPlayers, deckSize}) => {
 
@@ -27,9 +28,10 @@ const InitPlayers = ({noOfPlayers, noOfBotPlayers, deckSize}) => {
 
 
     return (
-        <div>
+        <Grid container spacing={1} >
+
             <InitLayout playerCardsMap={playerCardsMap}/>
-        </div>
+        </Grid>
     );
 };
 

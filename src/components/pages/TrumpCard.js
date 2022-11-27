@@ -20,21 +20,13 @@ import Divider from '@mui/material/Divider';
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {useEffect, useState} from "react";
 import Grid from "@material-ui/core/Grid";
-import {styled} from "@mui/material/styles";
-import Paper from "@material-ui/core/Paper";
-
-const style = {
-    width: '100%',
-    maxWidth: 360,
-};
-
 
 const TrumpCard = ({props, onAttributeClick}) => {
 
     const [data, setData] = useState(props);
 
     const listItems =
-        <List sx={style} component="nav" aria-label="stats-buttons">
+        <List aria-label="stats-buttons">
             <Grid container spacing={2} columns={12}>
                 {
                     props.attributes.map(attribute => (
@@ -66,7 +58,7 @@ const TrumpCard = ({props, onAttributeClick}) => {
     }, [props]);
 
     return (
-        <Card sx={{maxWidth: 345, bgcolor: data.cardBackground}}>
+        <Card sx={{bgcolor: data.cardBackground}}>
             <CardHeader
                 avatar={
                     <Avatar sx={{bgcolor: red[500]}} aria-label="avatar">
