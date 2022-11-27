@@ -9,21 +9,23 @@ import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { blue, red } from "@mui/material/colors";
+import { blue, red, teal } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import {useEffect, useState} from "react";
 
-const TrumpCard = ({ data }) => {
-  const [expanded, setExpanded] = React.useState(false);
+const TrumpCard = ({props}) => {
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+    const [data, setData] = useState(props);
+
+    useEffect(() => {
+        setData(props);
+    },[props]);
 
   return (
-    <Card sx={{ maxWidth: 345, backgroundColor: data.cardBackground[300] }}>
+    <Card sx={{ maxWidth: 345, bgcolor: data.cardBackground}}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

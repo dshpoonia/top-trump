@@ -13,7 +13,6 @@ import AppBar from "./components/AppBar";
 // Page Imports
 import HomePage from "./components/pages/HomePage";
 import NoPageFound from "./components/pages/NoPageFound";
-import PokemonPage from "./components/pokemon/PokemonPage";
 import SettingsPage from "./components/pages/SettingsPage";
 
 // Action Imports
@@ -24,6 +23,7 @@ import {
   getLocalSettings,
   setLocalSettings
 } from "./services/settingsOperations";
+import PokemonHome from "./components/pokemon/PokemonHome";
 
 class App extends Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class App extends Component {
           <AppBar />
           <Switch>
             <Route path={"/"} exact /*strict*/ component={HomePage} />
-            <Route path={"/pokemon"} exact /*strict*/ component={PokemonPage} />
+            <Route path={"/pokemon"} exact /*strict*/ component={PokemonHome} />
             <Route
               path={"/settings"}
               exact

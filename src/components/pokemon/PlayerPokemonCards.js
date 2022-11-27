@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TrumpCard from "../pages/TrumpCard";
 import Srand from "seeded-rand";
 import { pokemonData } from "../../variables/pokemon";
+import {teal} from "@mui/material/colors";
 
 const PokemonPage = () => {
   const rnd = new Srand(649);
@@ -14,7 +15,6 @@ const PokemonPage = () => {
   var player1 = rnd.sample(arr, 30);
   var player2 = rnd.sample(arr, 30);
 
-  console.log(player1);
   const [playerOnePokemon, setPlayerOnePokemon] = useState(pokemonData);
   const [computerPokemon, setComputerPokemon] = useState(pokemonData);
   const [desc, setDesc] = useState("");
@@ -30,7 +30,8 @@ const PokemonPage = () => {
           result.avatarHeader = result.title[0];
           result.subheader = result.types[0].type.name;
           result.attributes = [];
-          result.cardBackground = "teal";
+          result.cardBackground = teal[300];
+          result.cardContent = "ABC";
 
           result.stats.forEach(function (stat) {
             let s = {};
@@ -89,7 +90,7 @@ const PokemonPage = () => {
 
   return (
     <div>
-      <TrumpCard data={playerOnePokemon} />
+      <TrumpCard props={playerOnePokemon} />
     </div>
   );
 };
