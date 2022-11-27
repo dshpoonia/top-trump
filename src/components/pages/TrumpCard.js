@@ -29,7 +29,7 @@ const style = {
 };
 
 
-const TrumpCard = ({props}) => {
+const TrumpCard = ({props, onAttributeClick}) => {
 
     const [data, setData] = useState(props);
 
@@ -41,7 +41,7 @@ const TrumpCard = ({props}) => {
 
                         <Grid item xs={6}>
 
-                            <ListItem button>
+                            <ListItem button onClick = {() => {onAttributeClick(attribute.name)}}>
                                 <Grid container spacing={2} columns={12}>
                                     <Grid item xs={8}>
                                         <ListItemText primary={attribute.name}/>

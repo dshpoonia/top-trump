@@ -12,6 +12,9 @@ const PlayerPokemon = ({id}) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    const onAttributeClick = (attributeName) =>{
+        alert("Attribute name clicked " + attributeName);
+    }
     useEffect(() => {
         let url = "https://pokeapi.co/api/v2/pokemon/" + id;
         fetch(url)
@@ -58,7 +61,7 @@ const PlayerPokemon = ({id}) => {
     return (
         <div>
             {loaded &&
-                <PlayerPokemonDetails pokemon={playerPokemon}/>
+                <PlayerPokemonDetails pokemon={playerPokemon} onAttributeClick={onAttributeClick}/>
             }
         </div>
     );

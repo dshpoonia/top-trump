@@ -3,7 +3,7 @@ import TrumpCard from "../pages/TrumpCard";
 import {red, grey, blue, brown, green, pink, purple, yellow, teal,} from "@mui/material/colors";
 
 
-const PlayerPokemonDetails = ({pokemon}) => {
+const PlayerPokemonDetails = ({pokemon, onAttributeClick}) => {
 
     const [playerPokemon, setPlayerPokemon] = useState(pokemon);
     const [loaded, setLoaded] = useState(false);
@@ -57,7 +57,7 @@ const PlayerPokemonDetails = ({pokemon}) => {
     return (
         <div>
             {loaded &&
-                <TrumpCard props={playerPokemon}/>
+                <TrumpCard props={playerPokemon} onAttributeClick={onAttributeClick}/>
             }
 
         </div>

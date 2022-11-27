@@ -52,7 +52,7 @@ class TemporaryDrawer extends Component {
             to="/pokemon"
             style={style_unset}
           >
-            <ListItem button key={"PokemonPage"}>
+            <ListItem button key={"PokemonHome"}>
               <ListItemIcon>
                 <SearchIcon />
               </ListItemIcon>
