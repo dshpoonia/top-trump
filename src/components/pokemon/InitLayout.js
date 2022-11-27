@@ -48,7 +48,7 @@ const InitLayout = ({playerCardsMap}) => {
         playerCards[winnerPlayer].cards.push(cardsToMoveBack);
         playerCards[winnerPlayer].cards.push(cardsToBeTransferred);
 
-        setPlayerCards(playerCardsMap);
+        setPlayerCards(playerCards);
 
     }
 
@@ -58,14 +58,14 @@ const InitLayout = ({playerCardsMap}) => {
             <Grid item xs={2}>
             </Grid>
             <Grid id="player-layout-grid" item xs={3} alignItems="flex-end">
-                <PlayerPokemon id={6}
+                <PlayerPokemon id={playerCards["p1"].cards[0]}
                                playerId = "p1"
                                onAttributeClick={onAttributeClick}/>
             </Grid>
             <Grid item xs={2}>
             </Grid>
             <Grid id="bot-layout-grid" item xs={3} alignItems="flex-start">
-                <PlayerPokemon id={8}
+                <PlayerPokemon id={playerCards["b1"].cards[0]}
                                playerId = "b1"
                                attributeCheck={attributeCheck}
                                attributeCompareCallback={attributeCompareCallback}
