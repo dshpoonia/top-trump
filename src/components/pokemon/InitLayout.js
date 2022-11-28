@@ -1,31 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 
 import PlayerPokemon from "./PlayerPokemon";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
-import {PlayerCard} from "../pages/PlayerCard";
-import Divider from "@mui/material/Divider";
+import {connect} from "react-redux";
+import PlayerCard from "../pages/PlayerCard";
 
-const InitLayout = ({playerCardsMap}) => {
-
-    console.log("player card map", playerCardsMap);
-    const [playerCards, setPlayerCards] = useState(playerCardsMap)
-    const [playerTurn, setPlayerTurn] = useState("p1");
-    const [attributeCheck, setAttributeCheck] = useState({});
-
-    useEffect(() => {
-        setPlayerCards(playerCardsMap)
-    }, [playerCardsMap])
-
-    const onAttributeClick = (attributeName, attributeValue) =>{
-        let a = {};
-        a.attributeToCompare= attributeName;
-        a.attributeValueToCompare = attributeValue;
-        a.calculateResults = true;
-        a.selectedByPlayer = "p1";
-        setAttributeCheck(a);
-    }
+const InitLayout = (state, props) => {
 
     const attributeCompareCallback = (playerId, compareResult) =>{
 
@@ -34,40 +14,38 @@ const InitLayout = ({playerCardsMap}) => {
 
         if(compareResult < 0){
             winnerPlayer = playerId;
-            losingPlayer = playerTurn;
         }else{
-            winnerPlayer = playerTurn;
             losingPlayer = playerId;
         }
 
-        let cardsToMoveBack = playerCards[winnerPlayer].cards[0];
-        let cardsToBeTransferred = playerCards[losingPlayer].cards[0];
+        //let cardsToMoveBack = playerCards[winnerPlayer].cards[0];
+        //let cardsToBeTransferred = playerCards[losingPlayer].cards[0];
 
-        playerCards[winnerPlayer].cards.splice(0, 1);
-        playerCards[losingPlayer].cards.splice(0, 1);
-        playerCards[winnerPlayer].cards.push(cardsToMoveBack);
-        playerCards[winnerPlayer].cards.push(cardsToBeTransferred);
+        //playerCards[winnerPlayer].cards.splice(0, 1);
+        //playerCards[losingPlayer].cards.splice(0, 1);
+        //playerCards[winnerPlayer].cards.push(cardsToMoveBack);
+        //playerCards[winnerPlayer].cards.push(cardsToBeTransferred);
 
-        setPlayerCards(playerCards);
+        //setPlayerCards(playerCards);
 
     }
 
 
     return (
-        <Grid id="init-layout-container" container spacing={1} columns={12} alignItems="center">
+        <Grid id="init-layout-container" container columns={12} alignItems="center">
             <Grid item xs={2}>
             </Grid>
-            <Grid id="player-layout-grid" item xs={3} alignItems="flex-end">
-                <PlayerPokemon id={playerCards["p1"].cards[0]}
+            <Grid id="player-layout-grid" item xs={3} >
+                <PlayerPokemon id={state.player["p1"].cards[0]}
                                playerId = "p1"
-                               onAttributeClick={onAttributeClick}/>
+                               onAttributeClick={()=>{}}/>
             </Grid>
             <Grid item xs={2}>
             </Grid>
-            <Grid id="bot-layout-grid" item xs={3} alignItems="flex-start">
-                <PlayerPokemon id={playerCards["b1"].cards[0]}
+            <Grid id="bot-layout-grid" item xs={3} >
+                <PlayerPokemon id={state.player["b1"].cards[0]}
                                playerId = "b1"
-                               attributeCheck={attributeCheck}
+                               attributeCheck={()=>{}}
                                attributeCompareCallback={attributeCompareCallback}
                 />
             </Grid>
@@ -78,13 +56,13 @@ const InitLayout = ({playerCardsMap}) => {
             </Grid>
 
 
-            <Grid id="player-info-grid" item xs={3} alignItems="flex-end">
-                <PlayerCard playerId = "p1" playerCardsMap = {playerCards}/>
+            <Grid id="player-info-grid" item xs={3} >
+                <PlayerCard playerId = "p1"/>
             </Grid>
             <Grid item xs={2}>
             </Grid>
-            <Grid id="bot-info-grid" item xs={3} alignItems="flex-start">
-                <PlayerCard playerId = "b1" playerCardsMap = {playerCards}/>
+            <Grid id="bot-info-grid" item xs={3} >
+                <PlayerCard playerId = "b1"/>
             </Grid>
             <Grid item xs={2}>
             </Grid>
@@ -93,4 +71,12 @@ const InitLayout = ({playerCardsMap}) => {
     );
 };
 
-export default InitLayout;
+const mapStateToProps = (state, props) => {
+    return { ...state, ...props };
+};
+
+const mapDispatchToProps = {
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(InitLayout);
+

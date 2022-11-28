@@ -12,6 +12,12 @@ const PlayerPokemon = ({id, playerId, onAttributeClick, attributeCheck, attribut
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    const resetPokemonAndCallbackOnAttributeClick = (attributeName, attributeValue) =>{
+
+        //setPlayerPokemon({});
+        //setLoaded(false);
+        onAttributeClick(attributeName, attributeValue);
+    }
     useEffect( () => {
         if(attributeCheck && attributeCheck.calculateResults){
 
@@ -70,7 +76,7 @@ const PlayerPokemon = ({id, playerId, onAttributeClick, attributeCheck, attribut
     return (
         <div>
             {loaded &&
-                <PlayerPokemonDetails pokemon={playerPokemon} onAttributeClick={onAttributeClick}/>
+                <PlayerPokemonDetails pokemon={playerPokemon} onAttributeClick={resetPokemonAndCallbackOnAttributeClick}/>
             }
         </div>
     );

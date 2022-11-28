@@ -31,16 +31,16 @@ const TrumpCard = ({props, onAttributeClick}) => {
 
     const listItems =
         <List aria-label="stats-buttons">
-            <Grid container spacing={2} columns={12}>
+            <Grid container columns={12}>
                 {
                     props.attributes.map(attribute => (
 
-                        <Grid item xs={6}>
+                        <Grid key={attribute.name} item xs={6}>
 
                             <ListItem button onClick={() => {
                                 onAttributeClick(attribute.name, attribute.value)
                             }}>
-                                <Grid container spacing={2} columns={12}>
+                                <Grid container columns={12}>
                                     <Grid item xs={8}>
                                         <ListItemText primary={attribute.name}/>
                                     </Grid>

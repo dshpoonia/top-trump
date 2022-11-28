@@ -1,11 +1,5 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {useEffect, useState} from "react";
 import {teal} from "@mui/material/colors";
 import userImg from '../../static/images/player/user.png'
 import botImg from '../../static/images/player/bot.png'
@@ -15,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
 import ButtonBase from '@mui/material/ButtonBase';
+import {connect} from "react-redux";
 
 const Img = styled('img')({
     margin: 'auto',
@@ -23,31 +18,27 @@ const Img = styled('img')({
     maxHeight: '100%',
 });
 
-export const PlayerCard = ({playerId, playerCardsMap})  => {
+const PlayerCard = (state, props)  => {
 
-    const [playerInfo, setPlayerInfo] = useState(playerCardsMap);
-
-    useEffect(() => {
-        setPlayerInfo(playerCardsMap[playerId]);
-    }, [playerCardsMap])
-
+    console.log("player card state ", state);
+    console.log("player card props ", props);
     return (
         <Paper sx={{bgcolor: teal[300]}}>
             <Grid container spacing={2}>
                 <Grid item xs={3}>
                     <ButtonBase >
-                        {playerId == "b1" && <Img alt="user" src={botImg} />}
-                        {playerId != "b1" && <Img alt="user" src={userImg} />}
+                        {props.playerId == "b1" && <Img alt="user" src={botImg} />}
+                        {props.playerId != "b1" && <Img alt="user" src={userImg} />}
                     </ButtonBase>
                 </Grid>
                 <Grid item xs={5} sm container>
                     <Grid item xs container direction="column" spacing={2}>
                         <Grid item xs>
                             <Typography gutterBottom variant="subtitle1" component="div">
-                                {playerInfo.name}
+                                {state.player["p1"].name}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                                ID: {playerId}
+                                ID: {props.playerId}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -58,7 +49,7 @@ export const PlayerCard = ({playerId, playerCardsMap})  => {
                                     Cards
                                 </Typography>
                                 <Typography variant="subtitle1" component="div">
-                                    {playerInfo.cards && playerInfo.cards.length}
+                                    {state.player["p1"].cards && state.player["p1"].cards.length}
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -69,3 +60,12 @@ export const PlayerCard = ({playerId, playerCardsMap})  => {
         </Paper>
     );
 }
+
+const mapStateToProps = (state, props) => {
+    return { ...state, ...props };
+};
+
+const mapDispatchToProps = {
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerCard);
