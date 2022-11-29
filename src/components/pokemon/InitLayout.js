@@ -9,21 +9,34 @@ import {initPlayer} from "../../actions/player-actions";
 const InitLayout = (props) => {
 
     console.log("InitLayout props", props);
-    let playerMap = new Map(Object.entries(props.player));
+    let playerCardMap = new Map(Object.entries(props.player));
     let playerCards = [];
 
-    playerMap.forEach((pId, p) => playerCards.push(
+    playerCardMap.forEach((pId, p) => playerCards.push(
         <>
-            <Grid key={pId} item xs={2}>
+            <Grid key={pId + "cards"} item xs={2}>
             </Grid>
-            <Grid id="player-layout-grid" item xs={3}>
-                <PlayerPokemon id={1}
+            <Grid key={pId + "cards-space"} id="player-layout-grid" item xs={3}>
+                <PlayerPokemon key={pId + "player-pokemon"} id={1}
                                playerId={pId}/>
             </Grid>
 
         </>
     ));
 
+    let playerMap = new Map(Object.entries(props.player));
+    let players = [];
+
+    playerMap.forEach((pId, p) => players.push(
+        <>
+            <Grid key={pId + "player"} id="player-info-grid" item xs={3}>
+                <PlayerCard key={pId + "player"} playerId={pId}/>
+            </Grid>
+            <Grid key={pId + "player-space"} item xs={2}>
+            </Grid>
+
+        </>
+    ));
 
     return (
         <Grid id="init-layout-container" container columns={12} alignItems="center">
@@ -33,17 +46,7 @@ const InitLayout = (props) => {
             <Grid item xs={2}>
             </Grid>
 
-
-            <Grid id="player-info-grid" item xs={3}>
-                <PlayerCard playerId="p1"/>
-            </Grid>
-            <Grid item xs={2}>
-            </Grid>
-            <Grid id="bot-info-grid" item xs={3}>
-                <PlayerCard playerId="b1"/>
-            </Grid>
-            <Grid item xs={2}>
-            </Grid>
+            {players}
 
         </Grid>
     );

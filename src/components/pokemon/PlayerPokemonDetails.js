@@ -8,7 +8,6 @@ const PlayerPokemonDetails = ({pokemon, onAttributeClick}) => {
     const [playerPokemon, setPlayerPokemon] = useState(pokemon);
     const [loaded, setLoaded] = useState(false);
 
-    console.log("pokemon ", pokemon);
     useEffect(() => {
 
         fetch(pokemon.species.url)

@@ -5,7 +5,6 @@ import {initGame} from "../../actions/game-actions";
 
 const PokemonHome = (props) => {
 
-    console.log("pokemon home props", props)
     useEffect( () => {
         props.initGame({
             deckSize: 20,

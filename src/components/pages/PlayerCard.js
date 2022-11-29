@@ -18,10 +18,8 @@ const Img = styled('img')({
     maxHeight: '100%',
 });
 
-const PlayerCard = (state, props)  => {
+const PlayerCard = (props)  => {
 
-    console.log("player card state ", state);
-    console.log("player card props ", props);
     return (
         <Paper sx={{bgcolor: teal[300]}}>
             <Grid container spacing={2}>
@@ -35,7 +33,7 @@ const PlayerCard = (state, props)  => {
                     <Grid item xs container direction="column" spacing={2}>
                         <Grid item xs>
                             <Typography gutterBottom variant="subtitle1" component="div">
-                                {state.player["p1"].name}
+                                {props.player["p1"].name}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
                                 ID: {props.playerId}
@@ -49,7 +47,7 @@ const PlayerCard = (state, props)  => {
                                     Cards
                                 </Typography>
                                 <Typography variant="subtitle1" component="div">
-                                    {state.player["p1"].cards && state.player["p1"].cards.length}
+                                    {props.player["p1"].cards && props.player["p1"].cards.length}
                                 </Typography>
                             </Grid>
                         </Grid>
