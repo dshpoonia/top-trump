@@ -1,68 +1,46 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import PlayerPokemon from "./PlayerPokemon";
 import Grid from "@material-ui/core/Grid";
 import {connect} from "react-redux";
 import PlayerCard from "../pages/PlayerCard";
+import {initPlayer} from "../../actions/player-actions";
 
-const InitLayout = (state, props) => {
+const InitLayout = (props) => {
 
-    const attributeCompareCallback = (playerId, compareResult) =>{
+    console.log("InitLayout props", props);
+    let playerMap = new Map(Object.entries(props.player));
+    let playerCards = [];
 
-        let winnerPlayer = "";
-        let losingPlayer = "";
+    playerMap.forEach((pId, p) => playerCards.push(
+        <>
+            <Grid key={pId} item xs={2}>
+            </Grid>
+            <Grid id="player-layout-grid" item xs={3}>
+                <PlayerPokemon id={1}
+                               playerId={pId}/>
+            </Grid>
 
-        if(compareResult < 0){
-            winnerPlayer = playerId;
-        }else{
-            losingPlayer = playerId;
-        }
-
-        //let cardsToMoveBack = playerCards[winnerPlayer].cards[0];
-        //let cardsToBeTransferred = playerCards[losingPlayer].cards[0];
-
-        //playerCards[winnerPlayer].cards.splice(0, 1);
-        //playerCards[losingPlayer].cards.splice(0, 1);
-        //playerCards[winnerPlayer].cards.push(cardsToMoveBack);
-        //playerCards[winnerPlayer].cards.push(cardsToBeTransferred);
-
-        //setPlayerCards(playerCards);
-
-    }
+        </>
+    ));
 
 
     return (
         <Grid id="init-layout-container" container columns={12} alignItems="center">
-            <Grid item xs={2}>
-            </Grid>
-            <Grid id="player-layout-grid" item xs={3} >
-                <PlayerPokemon id={state.player["p1"].cards[0]}
-                               playerId = "p1"
-                               onAttributeClick={()=>{}}/>
-            </Grid>
-            <Grid item xs={2}>
-            </Grid>
-            <Grid id="bot-layout-grid" item xs={3} >
-                <PlayerPokemon id={state.player["b1"].cards[0]}
-                               playerId = "b1"
-                               attributeCheck={()=>{}}
-                               attributeCompareCallback={attributeCompareCallback}
-                />
-            </Grid>
-            <Grid item xs={2}>
-            </Grid>
+
+            {playerCards}
 
             <Grid item xs={2}>
             </Grid>
 
 
-            <Grid id="player-info-grid" item xs={3} >
-                <PlayerCard playerId = "p1"/>
+            <Grid id="player-info-grid" item xs={3}>
+                <PlayerCard playerId="p1"/>
             </Grid>
             <Grid item xs={2}>
             </Grid>
-            <Grid id="bot-info-grid" item xs={3} >
-                <PlayerCard playerId = "b1"/>
+            <Grid id="bot-info-grid" item xs={3}>
+                <PlayerCard playerId="b1"/>
             </Grid>
             <Grid item xs={2}>
             </Grid>
@@ -72,10 +50,11 @@ const InitLayout = (state, props) => {
 };
 
 const mapStateToProps = (state, props) => {
-    return { ...state, ...props };
+    return {...state, ...props};
 };
 
 const mapDispatchToProps = {
+    initPlayer
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(InitLayout);

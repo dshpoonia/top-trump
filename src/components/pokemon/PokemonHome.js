@@ -1,21 +1,23 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import InitPlayers from "./InitPlayers";
 import {initGame} from "../../actions/game-actions";
 
 const PokemonHome = (props) => {
 
+    console.log("pokemon home props", props)
     useEffect( () => {
         props.initGame({
             deckSize: 20,
             noOfBotPlayers: 1,
             noOfPlayers: 1,
+            initialized: true
 
         })
     },[])
     return (
         <div>
-            <InitPlayers/>
+            {props.game.initialized && <InitPlayers/>}
         </div>
     );
 };

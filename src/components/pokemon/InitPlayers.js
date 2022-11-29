@@ -7,18 +7,18 @@ import {connect} from "react-redux";
 import {teal} from "@mui/material/colors";
 import {getMasterPokemonIndex} from "../../services/pokemonOperations";
 
-const InitPlayers = (state, props) => {
+const InitPlayers = (props) => {
 
     useEffect(() => {
         let playerMap = new Map();
         let arr = getMasterPokemonIndex();
         const rnd = new Srand(arr.length);
 
-        for (let i = 1; i <= state.game.noOfPlayers; i++) {
+        for (let i = 1; i <= props.game.noOfPlayers; i++) {
             let p = {
                 id: "p"+i,
                 name: "Player"+1,
-                cards: rnd.sample(arr, state.game.deckSize),
+                cards: rnd.sample(arr, props.game.deckSize),
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
                     isHidden: false,
@@ -34,11 +34,11 @@ const InitPlayers = (state, props) => {
             playerMap.set("p"+i, p);
         }
 
-        for (let i = 1; i <= state.game.noOfBotPlayers; i++) {
+        for (let i = 1; i <= props.game.noOfBotPlayers; i++) {
             let b = {
                 id: "b"+i,
                 name: "Bot"+i,
-                cards: rnd.sample(arr, state.game.deckSize),
+                cards: rnd.sample(arr, props.game.deckSize),
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
                     isHidden: true,
@@ -55,7 +55,7 @@ const InitPlayers = (state, props) => {
 
         }
 
-       initPlayer(playerMap);
+       props.initPlayer(playerMap);
 
     }, [])
 

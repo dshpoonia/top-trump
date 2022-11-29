@@ -4,6 +4,7 @@ const initialState = {
     deckSize: 30,
     noOfBotPlayers: 1,
     noOfPlayers: 1,
+    initialized: false
 
 };
 
