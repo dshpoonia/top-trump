@@ -20,6 +20,8 @@ const Img = styled('img')({
 
 const PlayerCard = (props)  => {
 
+    const playerInfo = props.player[props.p];
+    console.log("PlayerCard playerInfo", playerInfo);
     return (
         <Paper sx={{bgcolor: teal[300]}}>
             <Grid container spacing={2}>
@@ -33,10 +35,10 @@ const PlayerCard = (props)  => {
                     <Grid item xs container direction="column" spacing={2}>
                         <Grid item xs>
                             <Typography gutterBottom variant="subtitle1" component="div">
-                                {props.player["p1"].name}
+                                {playerInfo.name}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                                ID: {props.playerId}
+                                ID: {playerInfo.id}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -47,7 +49,7 @@ const PlayerCard = (props)  => {
                                     Cards
                                 </Typography>
                                 <Typography variant="subtitle1" component="div">
-                                    {props.player["p1"].cards && props.player["p1"].cards.length}
+                                    {playerInfo.cards && playerInfo.cards.length}
                                 </Typography>
                             </Grid>
                         </Grid>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 
 import PlayerPokemon from "./PlayerPokemon";
 import Grid from "@material-ui/core/Grid";
@@ -8,34 +8,35 @@ import {initPlayer} from "../../actions/player-actions";
 
 const InitLayout = (props) => {
 
-    console.log("InitLayout props", props);
     let playerCardMap = new Map(Object.entries(props.player));
     let playerCards = [];
 
     playerCardMap.forEach((pId, p) => playerCards.push(
-        <>
-            <Grid key={pId + "cards"} item xs={2}>
+        <div key={pId + "cards"}>
+            <Grid item xs={2}>
             </Grid>
-            <Grid key={pId + "cards-space"} id="player-layout-grid" item xs={3}>
-                <PlayerPokemon key={pId + "player-pokemon"} id={1}
+            <Grid id="player-layout-grid" item xs={3}>
+                <PlayerPokemon id={1}
                                playerId={pId}/>
             </Grid>
 
-        </>
+        </div>
     ));
+
+    playerCards = [];
 
     let playerMap = new Map(Object.entries(props.player));
     let players = [];
 
     playerMap.forEach((pId, p) => players.push(
-        <>
-            <Grid key={pId + "player"} id="player-info-grid" item xs={3}>
-                <PlayerCard key={pId + "player"} playerId={pId}/>
+        <div key={pId + "player"}>
+            <Grid id="player-info-grid" item xs={3}>
+                <PlayerCard p={p}/>
             </Grid>
-            <Grid key={pId + "player-space"} item xs={2}>
+            <Grid item xs={2}>
             </Grid>
 
-        </>
+        </div>
     ));
 
     return (
