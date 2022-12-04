@@ -23,7 +23,8 @@ class PlayerPokemon extends Component {
                     activeTrump.avatarHeader = result.name.toUpperCase()[0];
                     activeTrump.header = result.name.toUpperCase();
                     activeTrump.subheader = capitalizeFirstLetter(result.types[0].type.name);
-                    activeTrump.image = result.sprites.other.home.front_default;
+                    //activeTrump.image = result.sprites.other.home.front_default;
+                    activeTrump.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/"+this.props.p.cards[0]+".png"
                     activeTrump.cardContent = ""
 
                     activeTrump.attributes.push({name: "Height", value: result.height});

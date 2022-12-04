@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="set trump">
-      <change beforePath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" afterDir="false" />
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="card data">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pokemonOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pokemonOperations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +166,7 @@
       <workItem from="1553525344314" duration="7720000" />
       <workItem from="1553538181795" duration="4963000" />
       <workItem from="1553601623938" duration="1765000" />
-      <workItem from="1669564999421" duration="49020000" />
+      <workItem from="1669564999421" duration="51619000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -292,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670158539734</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="card data">
+      <created>1670158741153</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1670158741153</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -382,7 +391,8 @@
     <MESSAGE value="store set" />
     <MESSAGE value="functional to class" />
     <MESSAGE value="set trump" />
-    <option name="LAST_COMMIT_MESSAGE" value="set trump" />
+    <MESSAGE value="card data" />
+    <option name="LAST_COMMIT_MESSAGE" value="card data" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">
