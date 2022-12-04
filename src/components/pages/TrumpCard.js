@@ -20,7 +20,7 @@ import Divider from '@mui/material/Divider';
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {Component, useEffect, useState} from "react";
 import Grid from "@material-ui/core/Grid";
-import {initPlayer} from "../../actions/player-actions";
+import {playTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
 
 class TrumpCard extends Component {
@@ -38,6 +38,11 @@ class TrumpCard extends Component {
                             <Grid key={this.props.p.id + attribute.name} item xs={6}>
 
                                 <ListItem button onClick={() => {
+                                    this.props.playTrump({
+                                        pId: this.props.p.id,
+                                        attributeNameClicked: attribute.name,
+                                        attributeValueClicked: attribute.value
+                                    })
                                 }}>
                                     <Grid container columns={12}>
                                         <Grid item xs={8}>
@@ -97,7 +102,7 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = {
-    initPlayer
+    playTrump
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TrumpCard);
