@@ -26,8 +26,8 @@ class PlayerPokemon extends Component {
                     activeTrump.image = result.sprites.other.home.front_default;
                     activeTrump.cardContent = ""
 
-                    activeTrump.attributes.push({"Height": result.height});
-                    activeTrump.attributes.push({"Weight": result.weight});
+                    activeTrump.attributes.push({name: "Height", value: result.height});
+                    activeTrump.attributes.push({name: "Weight", value: result.weight});
 
 
                     result.stats.forEach(function (stat) {

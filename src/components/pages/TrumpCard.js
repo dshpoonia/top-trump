@@ -27,15 +27,16 @@ class TrumpCard extends Component {
 
     render() {
 
-        console.log("TrumpCard", this.props.p)
+
         const trump = this.props.p.activeTrump;
+        console.log("TrumpCard", trump)
         const listItems =
             <List aria-label="stats-buttons">
                 <Grid container columns={12}>
                     {
                         trump.attributes.map(attribute => (
 
-                            <Grid key={attribute.name} item xs={6}>
+                            <Grid key={this.props.p.id + attribute.name} item xs={6}>
 
                                 <ListItem button onClick={() => {
                                 }}>
