@@ -10,6 +10,8 @@ import Paper from '@mui/material/Paper';
 
 import ButtonBase from '@mui/material/ButtonBase';
 import {connect} from "react-redux";
+import {initPlayer} from "../../actions/player-actions";
+import {useEffect} from "react";
 
 const Img = styled('img')({
     margin: 'auto',
@@ -20,8 +22,7 @@ const Img = styled('img')({
 
 const PlayerCard = (props)  => {
 
-    const playerInfo = props.player[props.p];
-    console.log("PlayerCard playerInfo", playerInfo);
+    const playerInfo = props.p;
     return (
         <Paper sx={{bgcolor: teal[300]}}>
             <Grid container spacing={2}>
@@ -66,6 +67,7 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = {
+    initPlayer,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerCard);

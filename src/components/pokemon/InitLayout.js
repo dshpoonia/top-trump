@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import PlayerPokemon from "./PlayerPokemon";
 import Grid from "@material-ui/core/Grid";
@@ -8,36 +8,44 @@ import {initPlayer} from "../../actions/player-actions";
 
 const InitLayout = (props) => {
 
-    let playerCardMap = new Map(Object.entries(props.player));
-    let playerCards = [];
+    const [playerCards, setPlayerCards] = useState([]);
+    const [players, setPlayers] = useState([]);
 
-    playerCardMap.forEach((pId, p) => playerCards.push(
-        <div key={pId + "cards"}>
-            <Grid item xs={2}>
-            </Grid>
-            <Grid id="player-layout-grid" item xs={3}>
-                <PlayerPokemon id={1}
-                               playerId={pId}/>
-            </Grid>
+    useEffect(()=>{
+        let playerCards = [];
+        let playerCardMap = new Map(Object.entries(props.player.playerMap));
 
-        </div>
-    ));
+        playerCardMap.forEach((p, pId) =>{
+            console.log("player card entry ", pId, p);
+        })
+            playerCardMap.forEach((pId, p) => playerCards.push(
+            <div key={pId + "cards"}>
+                <Grid item xs={2}>
+                </Grid>
+                <Grid id="player-layout-grid" item xs={3}>
+                    <PlayerPokemon id={1}
+                                   playerId={pId}/>
+                </Grid>
 
-    playerCards = [];
+            </div>
+        ));
+        setPlayerCards([]);
 
-    let playerMap = new Map(Object.entries(props.player));
-    let players = [];
+        let players = [];
 
-    playerMap.forEach((pId, p) => players.push(
-        <div key={pId + "player"}>
-            <Grid id="player-info-grid" item xs={3}>
-                <PlayerCard p={p}/>
-            </Grid>
-            <Grid item xs={2}>
-            </Grid>
+        playerCardMap.forEach((p, pId) => players.push(
+            <div key={pId + "player"}>
+                <Grid id="player-info-grid" item xs={3}>
+                    <PlayerCard p={p}/>
+                </Grid>
+                <Grid item xs={2}>
+                </Grid>
 
-        </div>
-    ));
+            </div>
+        ));
+
+        setPlayers(players);
+    }, [props.player])
 
     return (
         <Grid id="init-layout-container" container columns={12} alignItems="center">
@@ -54,7 +62,10 @@ const InitLayout = (props) => {
 };
 
 const mapStateToProps = (state, props) => {
-    return {...state, ...props};
+    console.log("InitLayout mapStateToProps", state, props)
+    return {
+        player: state.player
+    };
 };
 
 const mapDispatchToProps = {

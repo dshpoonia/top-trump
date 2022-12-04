@@ -16,8 +16,8 @@ const InitPlayers = (props) => {
 
         for (let i = 1; i <= props.game.noOfPlayers; i++) {
             let p = {
-                id: "p"+i,
-                name: "Player"+1,
+                id: "p" + i,
+                name: "Player" + 1,
                 cards: rnd.sample(arr, props.game.deckSize),
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
@@ -31,13 +31,13 @@ const InitPlayers = (props) => {
                 }
             }
 
-            playerMap.set("p"+i, p);
+            playerMap.set("p" + i, p);
         }
 
         for (let i = 1; i <= props.game.noOfBotPlayers; i++) {
             let b = {
-                id: "b"+i,
-                name: "Bot"+i,
+                id: "b" + i,
+                name: "Bot" + i,
                 cards: rnd.sample(arr, props.game.deckSize),
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
@@ -51,24 +51,30 @@ const InitPlayers = (props) => {
                 }
             }
 
-            playerMap.set("b"+i, b);
+            playerMap.set("b" + i, b);
 
         }
+        let player = {
+            noOfPlayers: props.game.noOfPlayers + props.game.noOfBotPlayers,
+            initialized: true,
+            playerMap: playerMap
+        }
 
-       props.initPlayer(playerMap);
+        props.initPlayer(player);
 
     }, [])
 
 
     return (
         <Grid container>
-            <InitLayout/>
+            {props.player.initialized && <InitLayout/>}
+
         </Grid>
     );
 };
 
 const mapStateToProps = (state, props) => {
-    return { ...state, ...props };
+    return {...state, ...props};
 };
 
 const mapDispatchToProps = {
