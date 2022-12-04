@@ -1,9 +1,10 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {Component} from "react";
 
-import {blue, brown, green, grey, pink, purple, red, teal, yellow} from "@mui/material/colors";
+import {teal} from "@mui/material/colors";
 import TrumpCard from "../pages/TrumpCard";
 import {loadTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
+import Grid from "@material-ui/core/Grid";
 import {capitalizeFirstLetter, getBackgroundColor} from "../../services/pokemonOperations";
 
 class PlayerPokemon extends Component {
@@ -72,9 +73,9 @@ class PlayerPokemon extends Component {
 
 
         return (
-            <div>
+            <Grid>
                 <TrumpCard p={this.props.p}/>
-            </div>
+            </Grid>
         );
     }
 }
