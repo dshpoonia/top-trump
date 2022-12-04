@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {Component, useEffect} from "react";
 import Srand from "seeded-rand";
 import InitLayout from "./InitLayout";
 import Grid from "@material-ui/core/Grid";
@@ -7,18 +7,18 @@ import {connect} from "react-redux";
 import {teal} from "@mui/material/colors";
 import {getMasterPokemonIndex} from "../../services/pokemonOperations";
 
-const InitPlayers = (props) => {
+class InitPlayers extends Component {
 
-    useEffect(() => {
+    componentDidMount()  {
         let playerMap = new Map();
         let arr = getMasterPokemonIndex();
         const rnd = new Srand(arr.length);
 
-        for (let i = 1; i <= props.game.noOfPlayers; i++) {
+        for (let i = 1; i <= this.props.game.noOfPlayers; i++) {
             let p = {
                 id: "p" + i,
                 name: "Player" + 1,
-                cards: rnd.sample(arr, props.game.deckSize),
+                cards: rnd.sample(arr, this.props.game.deckSize),
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
                     isHidden: false,
@@ -34,11 +34,11 @@ const InitPlayers = (props) => {
             playerMap.set("p" + i, p);
         }
 
-        for (let i = 1; i <= props.game.noOfBotPlayers; i++) {
+        for (let i = 1; i <= this.props.game.noOfBotPlayers; i++) {
             let b = {
                 id: "b" + i,
                 name: "Bot" + i,
-                cards: rnd.sample(arr, props.game.deckSize),
+                cards: rnd.sample(arr, this.props.game.deckSize),
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
                     isHidden: true,
@@ -55,23 +55,25 @@ const InitPlayers = (props) => {
 
         }
         let player = {
-            noOfPlayers: props.game.noOfPlayers + props.game.noOfBotPlayers,
+            noOfPlayers: this.props.game.noOfPlayers + this.props.game.noOfBotPlayers,
             initialized: true,
             playerMap: playerMap
         }
 
-        props.initPlayer(player);
+        this.props.initPlayer(player);
 
-    }, [])
+    }
 
 
-    return (
-        <Grid container>
-            {props.player.initialized && <InitLayout/>}
+    render() {
+        return (
+            <Grid container>
+                {this.props.player.initialized && <InitLayout/>}
 
-        </Grid>
-    );
-};
+            </Grid>
+        );
+    }
+}
 
 const mapStateToProps = (state, props) => {
     return {...state, ...props};
