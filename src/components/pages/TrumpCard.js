@@ -29,7 +29,6 @@ class TrumpCard extends Component {
 
 
         const trump = this.props.p.activeTrump;
-        console.log("TrumpCard", trump)
         const listItems =
             <List aria-label="stats-buttons">
                 <Grid container columns={12}>

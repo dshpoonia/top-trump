@@ -29,7 +29,7 @@ class InitLayout extends Component {
         ));
 
         return (
-            <Grid id="init-layout-container" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid id="init-layout-container" container >
 
                 {playerCards}
 
