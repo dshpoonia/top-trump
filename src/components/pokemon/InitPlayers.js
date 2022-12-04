@@ -57,6 +57,11 @@ class InitPlayers extends Component {
         let player = {
             noOfPlayers: this.props.game.noOfPlayers + this.props.game.noOfBotPlayers,
             initialized: true,
+            playerTurn: "p1",
+            checkTrump: {
+                winningPlayer: "p1",
+                isHidden: true,
+            },
             playerMap: playerMap
         }
 

@@ -25,7 +25,7 @@ class PlayerPokemon extends Component {
                     activeTrump.header = result.name.toUpperCase();
                     activeTrump.subheader = capitalizeFirstLetter(result.types[0].type.name);
                     //activeTrump.image = result.sprites.other.home.front_default;
-                    activeTrump.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/"+this.props.p.cards[0]+".png"
+                    activeTrump.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + this.props.p.cards[0] + ".png"
                     activeTrump.cardContent = ""
 
                     activeTrump.attributes.push({name: "Height", value: result.height});
@@ -71,9 +71,19 @@ class PlayerPokemon extends Component {
 
     render() {
 
+        let shouldDisplay = false;
+        if (this.props.player.playerTurn == this.props.p.id) {
+            shouldDisplay = true;
+        } else if (!this.props.player.checkTrump.isHidden) {
+            shouldDisplay = true;
+        }
 
         return (
-                <TrumpCard p={this.props.p}/>
+            <Grid>
+                {shouldDisplay && <TrumpCard p={this.props.p}/>
+                }
+
+            </Grid>
         );
     }
 }

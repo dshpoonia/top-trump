@@ -4,6 +4,7 @@ import {teal} from "@mui/material/colors";
 const initialState = {
     noOfPlayers: 1,
     initialized: false,
+    playerTurn: "p1",
     checkTrump: {
         winningPlayer: "p1",
         isHidden: true,
