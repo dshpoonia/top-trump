@@ -1,4 +1,4 @@
-import {INIT_PLAYER} from "../actions/player-actions";
+import {INIT_PLAYER, LOAD_TRUMP} from "../actions/player-actions";
 import {teal} from "@mui/material/colors";
 
 const initialState = {
@@ -25,10 +25,13 @@ const initialState = {
 };
 
 export default function playerReducer(state = initialState, action) {
-    console.log("Reducer", action.type, action.payload)
     switch (action.type) {
         case INIT_PLAYER:
             return action.payload;
+        case LOAD_TRUMP:
+            let s = { ...state};
+            s.playerMap.get(action.payload.p).activeTrump = action.payload.activeTrump;
+            return s;
 
         default:
             return state;

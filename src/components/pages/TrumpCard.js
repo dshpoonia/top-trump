@@ -18,79 +18,86 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import {useEffect, useState} from "react";
+import {Component, useEffect, useState} from "react";
 import Grid from "@material-ui/core/Grid";
+import {initPlayer} from "../../actions/player-actions";
+import {connect} from "react-redux";
 
-const TrumpCard = ({props, onAttributeClick}) => {
+class TrumpCard extends Component {
 
-    const [data, setData] = useState(props);
+    render() {
 
-    useEffect(()=>{
-        setData(props)
-    }, [props])
+        console.log("TrumpCard", this.props.p)
+        const trump = this.props.p.activeTrump;
+        const listItems =
+            <List aria-label="stats-buttons">
+                <Grid container columns={12}>
+                    {
+                        trump.attributes.map(attribute => (
 
-    const listItems =
-        <List aria-label="stats-buttons">
-            <Grid container columns={12}>
-                {
-                    props.attributes.map(attribute => (
+                            <Grid key={attribute.name} item xs={6}>
 
-                        <Grid key={attribute.name} item xs={6}>
-
-                            <ListItem button onClick={() => {
-                                onAttributeClick(attribute.name, attribute.value)
-                            }}>
-                                <Grid container columns={12}>
-                                    <Grid item xs={8}>
-                                        <ListItemText primary={attribute.name}/>
+                                <ListItem button onClick={() => {
+                                }}>
+                                    <Grid container columns={12}>
+                                        <Grid item xs={8}>
+                                            <ListItemText primary={attribute.name}/>
+                                        </Grid>
+                                        <Grid item xs={4}>
+                                            <ListItemText primary={attribute.value}/>
+                                        </Grid>
                                     </Grid>
-                                    <Grid item xs={4}>
-                                        <ListItemText primary={attribute.value}/>
-                                    </Grid>
-                                </Grid>
-                            </ListItem>
+                                </ListItem>
 
-                        </Grid>
+                            </Grid>
 
 
-                    ))
+                        ))
+                    }
+                </Grid>
+            </List>
+
+        return (
+            <>
+                {this.props.p &&
+                    <Card sx={{bgcolor: trump.cardBackground}}>
+                        <CardHeader
+                            avatar={
+                                <Avatar sx={{bgcolor: red[500]}} aria-label="avatar">
+                                    {trump.avatarHeader}
+                                </Avatar>
+                            }
+                            title={<Typography variant="h6">{trump.title}</Typography>}
+                            subheader={trump.subheader}
+                        />
+                        <CardMedia
+                            component="img"
+                            height="194"
+                            image={trump.image}
+                            alt={trump.name}
+                        />
+
+                        <CardContent>
+                            <Typography variant="body2" color="text.secondary">
+                                {trump.cardContent}
+                            </Typography>
+                        </CardContent>
+                        <CardActions disableSpacing>
+                            {listItems}
+                        </CardActions>
+                    </Card>
                 }
-            </Grid>
-        </List>
+            </>
+        );
+    }
+}
 
-
-    useEffect(() => {
-        setData(props);
-    }, [props]);
-
-    return (
-        <Card sx={{bgcolor: data.cardBackground}}>
-            <CardHeader
-                avatar={
-                    <Avatar sx={{bgcolor: red[500]}} aria-label="avatar">
-                        {data.avatarHeader}
-                    </Avatar>
-                }
-                title={<Typography variant="h6">{data.title}</Typography>}
-                subheader={data.subheader}
-            />
-            <CardMedia
-                component="img"
-                height="194"
-                image={data.image}
-                alt={data.name}
-            />
-
-            <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                    {data.cardContent}
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                {listItems}
-            </CardActions>
-        </Card>
-    );
+const mapStateToProps = (state, props) => {
+    return {...state, ...props};
 };
 
-export default TrumpCard;
+const mapDispatchToProps = {
+    initPlayer
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TrumpCard);

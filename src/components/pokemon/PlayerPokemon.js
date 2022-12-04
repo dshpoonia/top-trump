@@ -1,85 +1,89 @@
-import React, {useEffect, useState} from "react";
+import React, {Component, useEffect, useState} from "react";
 
-import {teal} from "@mui/material/colors";
-import PlayerPokemonDetails from "./PlayerPokemonDetails";
+import {blue, brown, green, grey, pink, purple, red, teal, yellow} from "@mui/material/colors";
+import TrumpCard from "../pages/TrumpCard";
+import {loadTrump} from "../../actions/player-actions";
+import {connect} from "react-redux";
+import {capitalizeFirstLetter, getBackgroundColor} from "../../services/pokemonOperations";
 
-const PlayerPokemon = ({id, playerId, onAttributeClick, attributeCheck, attributeCompareCallback} ) => {
+class PlayerPokemon extends Component {
 
-    const [playerPokemon, setPlayerPokemon] = useState({});
-    const [loaded, setLoaded] = useState(false);
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
-    const resetPokemonAndCallbackOnAttributeClick = (attributeName, attributeValue) =>{
-
-        //setPlayerPokemon({});
-        //setLoaded(false);
-        onAttributeClick(attributeName, attributeValue);
-    }
-    useEffect( () => {
-        if(attributeCheck && attributeCheck.calculateResults){
-
-            if(playerId != attributeCheck.selectedByPlayer){
-
-                let a = playerPokemon.attributes.filter((att) => {return att.name == attributeCheck.attributeToCompare})
-                let val = a[0].value;
-                attributeCompareCallback(playerId, attributeCheck.attributeValueToCompare - val);
-            }
-        }
-    }, [attributeCheck])
-
-    useEffect(() => {
-        let url = "https://pokeapi.co/api/v2/pokemon/" + id;
+    componentDidMount() {
+        let url = "https://pokeapi.co/api/v2/pokemon/" + this.props.p.cards[0];
         fetch(url)
             .then((res) => res.json())
             .then(
                 (result) => {
-                    var pokemon = result;
-                    pokemon.image = result.sprites.other.home.front_default;
-                    pokemon.title = result.name.toUpperCase();
-                    pokemon.avatarHeader = result.name.toUpperCase()[0];
-                    pokemon.subheader = capitalizeFirstLetter(result.types[0].type.name);
-                    pokemon.attributes = [];
 
-                    let s = {};
-                    s.name = "Height";
-                    s.value = result.height;
-                    pokemon.attributes.push(s);
+                    let activeTrump = {};
 
-                    s = {};
-                    s.name = "Weight";
-                    s.value = result.weight;
-                    pokemon.attributes.push(s);
+                    activeTrump.attributes = [];
+                    activeTrump.isHidden = true;
+                    activeTrump.background = teal[300];
+                    activeTrump.avatarHeader = result.name.toUpperCase()[0];
+                    activeTrump.header = result.name.toUpperCase();
+                    activeTrump.subheader = capitalizeFirstLetter(result.types[0].type.name);
+                    activeTrump.image = result.sprites.other.home.front_default;
+                    activeTrump.cardContent = ""
+
+                    activeTrump.attributes.push({"Height": result.height});
+                    activeTrump.attributes.push({"Weight": result.weight});
+
 
                     result.stats.forEach(function (stat) {
 
                         if (stat.stat.name.indexOf("special") == -1) {
-                            s = {};
+                            let s = {};
                             s.name = capitalizeFirstLetter(stat.stat.name);
                             s.value = stat.base_stat;
-                            pokemon.attributes.push(s);
+                            activeTrump.attributes.push(s);
                         }
                     }, result.attributes);
 
-                    setPlayerPokemon(pokemon);
-                    setLoaded(true);
+
+                    fetch(result.species.url)
+                        .then((res) => res.json())
+                        .then(
+                            (res) => {
+                                let lang = res.flavor_text_entries.filter((e) => {
+                                    return e.language.name == "en";
+                                });
+                                activeTrump.cardContent = lang[0].flavor_text;
+                                activeTrump.cardBackground = getBackgroundColor(res.color.name);
+
+                                activeTrump.isHidden = false;
+
+                                this.props.loadTrump({p: this.props.p.id, activeTrump: activeTrump})
+                            },
+                            (error) => {
+                                console.log("Error fetching pokemon extra details");
+                            }
+                        );
 
                 },
                 (error) => {
-                    console.log("error");
+                    console.log("Error fetching pokemon details", error);
                 }
             );
-    }, [id]);
+    }
 
-    return (
-        <div>
-            {loaded &&
-                <PlayerPokemonDetails pokemon={playerPokemon} onAttributeClick={resetPokemonAndCallbackOnAttributeClick}/>
-            }
-        </div>
-    );
+    render() {
+
+
+        return (
+            <div>
+                <TrumpCard p={this.props.p}/>
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = (state, props) => {
+    return {...state, ...props};
 };
 
-export default PlayerPokemon;
+const mapDispatchToProps = {
+    loadTrump
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerPokemon);

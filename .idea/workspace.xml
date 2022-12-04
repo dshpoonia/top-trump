@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="init player redux">
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="functional to class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/PlayerCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/PlayerCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/player-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/player-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemonDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemonDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PokemonHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemonDetails.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/playerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/playerReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pokemonOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pokemonOperations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +171,7 @@
       <workItem from="1553525344314" duration="7720000" />
       <workItem from="1553538181795" duration="4963000" />
       <workItem from="1553601623938" duration="1765000" />
-      <workItem from="1669564999421" duration="36751000" />
+      <workItem from="1669564999421" duration="48661000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -261,7 +264,35 @@
       <option name="project" value="LOCAL" />
       <updated>1669755265079</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="unique keys">
+      <created>1669755801782</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669755801782</updated>
+    </task>
+    <task id="LOCAL-00015" summary="console errors">
+      <created>1670006169099</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670006169099</updated>
+    </task>
+    <task id="LOCAL-00016" summary="store set">
+      <created>1670153001656</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670153001656</updated>
+    </task>
+    <task id="LOCAL-00017" summary="functional to class">
+      <created>1670153583887</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1670153583887</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -346,7 +377,11 @@
     <MESSAGE value="use effect on trump card" />
     <MESSAGE value="redux for state management" />
     <MESSAGE value="init player redux" />
-    <option name="LAST_COMMIT_MESSAGE" value="init player redux" />
+    <MESSAGE value="unique keys" />
+    <MESSAGE value="console errors" />
+    <MESSAGE value="store set" />
+    <MESSAGE value="functional to class" />
+    <option name="LAST_COMMIT_MESSAGE" value="functional to class" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">

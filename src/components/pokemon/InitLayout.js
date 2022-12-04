@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {Component, useEffect, useState} from "react";
 
 import PlayerPokemon from "./PlayerPokemon";
 import Grid from "@material-ui/core/Grid";
@@ -6,30 +6,24 @@ import {connect} from "react-redux";
 import PlayerCard from "../pages/PlayerCard";
 import {initPlayer} from "../../actions/player-actions";
 
-const InitLayout = (props) => {
+class InitLayout extends Component {
 
-    const [playerCards, setPlayerCards] = useState([]);
-    const [players, setPlayers] = useState([]);
 
-    useEffect(()=>{
+    render() {
+
         let playerCards = [];
-        let playerCardMap = new Map(Object.entries(props.player.playerMap));
+        let playerCardMap = this.props.player.playerMap;
 
-        playerCardMap.forEach((p, pId) =>{
-            console.log("player card entry ", pId, p);
-        })
-            playerCardMap.forEach((pId, p) => playerCards.push(
+        playerCardMap.forEach((p, pId) => playerCards.push(
             <div key={pId + "cards"}>
                 <Grid item xs={2}>
                 </Grid>
                 <Grid id="player-layout-grid" item xs={3}>
-                    <PlayerPokemon id={1}
-                                   playerId={pId}/>
+                    <PlayerPokemon p={p}/>
                 </Grid>
 
             </div>
         ));
-        setPlayerCards([]);
 
         let players = [];
 
@@ -44,28 +38,23 @@ const InitLayout = (props) => {
             </div>
         ));
 
-        setPlayers(players);
-    }, [props.player])
+        return (
+            <Grid id="init-layout-container" container columns={12} alignItems="center">
 
-    return (
-        <Grid id="init-layout-container" container columns={12} alignItems="center">
+                {playerCards}
 
-            {playerCards}
+                <Grid item xs={2}>
+                </Grid>
 
-            <Grid item xs={2}>
+                {players}
+
             </Grid>
-
-            {players}
-
-        </Grid>
-    );
-};
+        );
+    }
+}
 
 const mapStateToProps = (state, props) => {
-    console.log("InitLayout mapStateToProps", state, props)
-    return {
-        player: state.player
-    };
+    return {...state, ...props};
 };
 
 const mapDispatchToProps = {
