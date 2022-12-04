@@ -4,7 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Material UI Imports
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { MuiThemeProvider, createTheme } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 
 // Component Imports
@@ -13,31 +13,17 @@ import AppBar from "./components/AppBar";
 // Page Imports
 import HomePage from "./components/pages/HomePage";
 import NoPageFound from "./components/pages/NoPageFound";
-import SettingsPage from "./components/pages/SettingsPage";
 
-// Action Imports
-import { setSettings } from "./actions/settings-actions";
-
-// Local Storage Operations
-import {
-  getLocalSettings,
-  setLocalSettings
-} from "./services/settingsOperations";
 import PokemonHome from "./components/pokemon/PokemonHome";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    // Settings init
-    let settings = getLocalSettings();
-    if (settings === null || settings === undefined)
-      setLocalSettings(this.props.settings);
-    else this.props.setSettings(settings);
   }
 
   render() {
-    const theme = createMuiTheme(this.props.settings);
+    const theme = createTheme(this.props.settings);
 
     return (
       <MuiThemeProvider theme={theme}>
@@ -47,11 +33,6 @@ class App extends Component {
           <Switch>
             <Route path={"/"} exact /*strict*/ component={HomePage} />
             <Route path={"/pokemon"} exact /*strict*/ component={PokemonHome} />
-            <Route
-              path={"/settings"}
-              exact
-              /*strict*/ component={SettingsPage}
-            />
             <Route exact /*strict*/ component={NoPageFound} />
           </Switch>
         </Router>
@@ -65,7 +46,6 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = {
-  setSettings
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

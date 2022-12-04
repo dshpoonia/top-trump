@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="card data">
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="idea folder in gitingore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/pokemonOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pokemonOperations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/settings-actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/SettingsPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PokemonHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/settingsReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/settingsOperations.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +175,7 @@
       <workItem from="1553525344314" duration="7720000" />
       <workItem from="1553538181795" duration="4963000" />
       <workItem from="1553601623938" duration="1765000" />
-      <workItem from="1669564999421" duration="51619000" />
+      <workItem from="1669564999421" duration="53002000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -301,7 +310,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670158741153</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="secondary image url">
+      <created>1670161595611</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1670161595611</updated>
+    </task>
+    <task id="LOCAL-00021" summary="idea folder in gitingore">
+      <created>1670161622924</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670161622924</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -392,7 +415,9 @@
     <MESSAGE value="functional to class" />
     <MESSAGE value="set trump" />
     <MESSAGE value="card data" />
-    <option name="LAST_COMMIT_MESSAGE" value="card data" />
+    <MESSAGE value="secondary image url" />
+    <MESSAGE value="idea folder in gitingore" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea folder in gitingore" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">

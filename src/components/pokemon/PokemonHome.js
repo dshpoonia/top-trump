@@ -18,9 +18,9 @@ class PokemonHome extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 {this.props.game.initialized && <InitPlayers/>}
-            </div>
+            </>
         );
     };
 }

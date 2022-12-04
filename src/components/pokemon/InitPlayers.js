@@ -67,10 +67,10 @@ class InitPlayers extends Component {
 
     render() {
         return (
-            <Grid container>
+            <>
                 {this.props.player.initialized && <InitLayout/>}
 
-            </Grid>
+            </>
         );
     }
 }
