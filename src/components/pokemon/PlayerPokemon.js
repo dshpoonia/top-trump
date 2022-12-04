@@ -73,9 +73,7 @@ class PlayerPokemon extends Component {
 
 
         return (
-            <Grid>
                 <TrumpCard p={this.props.p}/>
-            </Grid>
         );
     }
 }

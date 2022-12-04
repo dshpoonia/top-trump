@@ -15,30 +15,15 @@ class InitLayout extends Component {
         let playerCardMap = this.props.player.playerMap;
 
         playerCardMap.forEach((p, pId) => playerCards.push(
-            <Grid container key={pId + "cards"} id="player-layout-grid" item xs={3} direction="column">
+            <Grid container key={pId + "cards"} id="player-layout-grid" xs={3} direction="column">
                 <PlayerPokemon p={p}/>
                 <PlayerCard p={p}/>
             </Grid>
         ));
 
-        let players = [];
-
-        playerCardMap.forEach((p, pId) => players.push(
-            <Grid key={pId + "player"} id="player-info-grid" item xs={3}>
-
-            </Grid>
-        ));
-
         return (
-            <Grid id="init-layout-container" container >
-
+            <Grid container>
                 {playerCards}
-
-                <Grid item xs={2}>
-                </Grid>
-
-                {players}
-
             </Grid>
         );
     }
