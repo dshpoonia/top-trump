@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="console and warning">
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="layout fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PokemonHome.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +165,7 @@
       <workItem from="1553525344314" duration="7720000" />
       <workItem from="1553538181795" duration="4963000" />
       <workItem from="1553601623938" duration="1765000" />
-      <workItem from="1669564999421" duration="53617000" />
+      <workItem from="1669564999421" duration="56231000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -329,7 +328,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670163091389</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="layout fixes">
+      <created>1670163464334</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670163464335</updated>
+    </task>
+    <task id="LOCAL-00025" summary="layout fixes">
+      <created>1670182137799</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1670182137799</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -424,7 +437,8 @@
     <MESSAGE value="idea folder in gitingore" />
     <MESSAGE value="dead code" />
     <MESSAGE value="console and warning" />
-    <option name="LAST_COMMIT_MESSAGE" value="console and warning" />
+    <MESSAGE value="layout fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout fixes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">

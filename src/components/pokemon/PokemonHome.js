@@ -2,6 +2,7 @@ import React, {Component, useEffect} from "react";
 import {connect} from "react-redux";
 import InitPlayers from "./InitPlayers";
 import {initGame} from "../../actions/game-actions";
+import Container from '@mui/material/Container';
 
 class PokemonHome extends Component {
 
@@ -18,9 +19,9 @@ class PokemonHome extends Component {
 
     render() {
         return (
-            <>
+            <Container>
                 {this.props.game.initialized && <InitPlayers/>}
-            </>
+            </Container>
         );
     };
 }
