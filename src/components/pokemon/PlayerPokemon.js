@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useEffect} from "react";
 
 import {teal} from "@mui/material/colors";
 import TrumpCard from "../pages/TrumpCard";
@@ -11,11 +11,10 @@ import pokemonImg from "../../static/images/player/pokemon.jpeg";
 import {styled} from "@mui/material/styles";
 import BounceTrumpCard from "../pages/BounceTrumpCard";
 
-class PlayerPokemon extends Component {
+const PlayerPokemon = (props) => {
 
-
-    componentDidMount() {
-        let url = "https://pokeapi.co/api/v2/pokemon/" + this.props.p.cards[0];
+    useEffect(() => {
+        let url = "https://pokeapi.co/api/v2/pokemon/" + props.p.activePokemon;
         fetch(url)
             .then((res) => res.json())
             .then(
@@ -30,7 +29,7 @@ class PlayerPokemon extends Component {
                     activeTrump.header = result.name.toUpperCase();
                     activeTrump.subheader = capitalizeFirstLetter(result.types[0].type.name);
                     //activeTrump.image = result.sprites.other.home.front_default;
-                    activeTrump.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + this.props.p.cards[0] + ".png"
+                    activeTrump.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + props.p.cards[0] + ".png"
                     activeTrump.cardContent = ""
 
                     activeTrump.attributes.push({name: "Height", value: result.height});
@@ -60,7 +59,7 @@ class PlayerPokemon extends Component {
 
                                 activeTrump.isHidden = false;
 
-                                this.props.loadTrump({p: this.props.p.id, activeTrump: activeTrump})
+                                props.loadTrump({p: props.p.id, activeTrump: activeTrump})
                             },
                             (error) => {
                                 console.log("Error fetching pokemon extra details");
@@ -72,32 +71,31 @@ class PlayerPokemon extends Component {
                     console.log("Error fetching pokemon details", error);
                 }
             );
+    }, [props.p.activePokemon])
+
+    console.log("Active pokemon ", props.p.cards[0]);
+    const Img = styled('img')({
+        margin: 'auto',
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+    });
+
+    let shouldDisplay = false;
+    if (props.player.playerTurn == props.p.id) {
+        shouldDisplay = true;
+    } else if (props.player.checkTrump.showOtherPlayerCards) {
+        shouldDisplay = true;
     }
 
-    render() {
+    return (
+        <Grid>
+            {shouldDisplay && <BounceTrumpCard p={props.p}/>}
+            {!shouldDisplay && <Card> <Img alt="pokemon" src={pokemonImg}/> </Card>}
 
-        const Img = styled('img')({
-            margin: 'auto',
-            display: 'block',
-            maxWidth: '100%',
-            maxHeight: '100%',
-        });
+        </Grid>
+    );
 
-        let shouldDisplay = false;
-        if (this.props.player.playerTurn == this.props.p.id) {
-            shouldDisplay = true;
-        } else if (this.props.player.checkTrump.showOtherPlayerCards) {
-            shouldDisplay = true;
-        }
-
-        return (
-            <Grid>
-                {shouldDisplay && <BounceTrumpCard p={this.props.p}/>}
-                {!shouldDisplay && <Card> <Img alt="pokemon" src={pokemonImg} /> </Card>}
-
-            </Grid>
-        );
-    }
 }
 
 const mapStateToProps = (state, props) => {

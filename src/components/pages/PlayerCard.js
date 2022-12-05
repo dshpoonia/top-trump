@@ -22,6 +22,7 @@ const Img = styled('img')({
 
 const PlayerCard = (props)  => {
 
+    useEffect(()=>{},[])
     const playerInfo = props.p;
     return (
         <Paper sx={{bgcolor: teal[300]}}>

@@ -15,10 +15,12 @@ class InitPlayers extends Component {
         const rnd = new Srand(arr.length);
 
         for (let i = 1; i <= this.props.game.noOfPlayers; i++) {
+            let cards = rnd.sample(arr, this.props.game.deckSize);
             let p = {
                 id: "p" + i,
                 name: "Player" + 1,
-                cards: rnd.sample(arr, this.props.game.deckSize),
+                cards: cards,
+                activePokemon: cards[0],
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
                     isHidden: false,
@@ -35,10 +37,12 @@ class InitPlayers extends Component {
         }
 
         for (let i = 1; i <= this.props.game.noOfBotPlayers; i++) {
+            let cards = rnd.sample(arr, this.props.game.deckSize);
             let b = {
                 id: "b" + i,
                 name: "Bot" + i,
-                cards: rnd.sample(arr, this.props.game.deckSize),
+                cards: cards,
+                activePokemon: cards[0],
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
                     isHidden: true,
