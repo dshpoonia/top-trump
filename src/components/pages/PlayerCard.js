@@ -28,8 +28,8 @@ const PlayerCard = (props)  => {
             <Grid container spacing={2}>
                 <Grid item xs={3}>
                     <ButtonBase >
-                        {props.playerId == "b1" && <Img alt="user" src={botImg} />}
-                        {props.playerId != "b1" && <Img alt="user" src={userImg} />}
+                        {playerInfo.id == "b1" && <Img alt="user" src={botImg} />}
+                        {playerInfo.id != "b1" && <Img alt="user" src={userImg} />}
                     </ButtonBase>
                 </Grid>
                 <Grid item xs={5} sm container>
