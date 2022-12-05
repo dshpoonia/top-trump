@@ -9,6 +9,7 @@ import Card from "@material-ui/core/Card";
 import {capitalizeFirstLetter, getBackgroundColor} from "../../services/pokemonOperations";
 import pokemonImg from "../../static/images/player/pokemon.jpeg";
 import {styled} from "@mui/material/styles";
+import BounceTrumpCard from "../pages/BounceTrumpCard";
 
 class PlayerPokemon extends Component {
 
@@ -91,7 +92,7 @@ class PlayerPokemon extends Component {
 
         return (
             <Grid>
-                {shouldDisplay && <TrumpCard p={this.props.p}/>}
+                {shouldDisplay && <BounceTrumpCard p={this.props.p}/>}
                 {!shouldDisplay && <Card> <Img alt="pokemon" src={pokemonImg} /> </Card>}
 
             </Grid>

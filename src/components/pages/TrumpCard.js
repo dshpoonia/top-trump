@@ -7,22 +7,18 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 
 import Avatar from "@mui/material/Avatar";
-import IconButton, {IconButtonProps} from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import {blue, red, teal} from "@mui/material/colors";
+import {red} from "@mui/material/colors";
 
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
 
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import {Component, useEffect, useState} from "react";
+import {Component} from "react";
 import Grid from "@material-ui/core/Grid";
 import {playTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
-import Zoom from 'react-reveal/Zoom';
 
 class TrumpCard extends Component {
 
@@ -65,7 +61,7 @@ class TrumpCard extends Component {
             </List>
 
         return (
-            <Zoom>
+            <>
                 {this.props.p &&
                     <Card sx={{bgcolor: trump.cardBackground}}>
                         <CardHeader
@@ -94,7 +90,7 @@ class TrumpCard extends Component {
                         </CardActions>
                     </Card>
                 }
-            </Zoom>
+            </>
         );
     }
 }

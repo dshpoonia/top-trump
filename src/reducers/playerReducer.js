@@ -9,6 +9,7 @@ const initialState = {
         winningPlayer: "p1",
         showOtherPlayerCards: false,
     },
+    displayCheckTrumpResult: false,
     playerMap: {
         p1: {
             id: "dummy",
@@ -62,6 +63,7 @@ export default function playerReducer(state = initialState, action) {
                 showOtherPlayerCards: true
             }
 
+            s.displayCheckTrumpResult = true;
             //Take cards from losing players
             s.playerMap.forEach((p, pId) => {
                 s.playerMap.get(winningPlayerId).cards.push(p.cards.shift())
