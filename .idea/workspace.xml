@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="layout and bot image fix">
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="property name change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/playerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/playerReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +176,7 @@
       <workItem from="1553601623938" duration="1765000" />
       <workItem from="1669564999421" duration="61660000" />
       <workItem from="1670262775408" duration="5546000" />
-      <workItem from="1670268540210" duration="675000" />
+      <workItem from="1670268540210" duration="2616000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -396,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670267733081</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="property name change">
+      <created>1670269610992</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1670269610992</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -468,7 +474,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="attribute clicked callback" />
     <MESSAGE value="pokemon layout fixes" />
     <MESSAGE value="att comparison" />
     <MESSAGE value="user score card" />
@@ -493,7 +498,8 @@
     <MESSAGE value="hidden card image" />
     <MESSAGE value="zoom effect" />
     <MESSAGE value="layout and bot image fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="layout and bot image fix" />
+    <MESSAGE value="property name change" />
+    <option name="LAST_COMMIT_MESSAGE" value="property name change" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">
