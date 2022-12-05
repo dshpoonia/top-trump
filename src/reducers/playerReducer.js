@@ -7,7 +7,7 @@ const initialState = {
     playerTurn: "p1",
     checkTrump: {
         winningPlayer: "p1",
-        isHidden: true,
+        showOtherPlayerCards: false,
     },
     playerMap: {
         p1: {
@@ -59,7 +59,7 @@ export default function playerReducer(state = initialState, action) {
 
             s.checkTrump = {
                 winningPlayer: winningPlayerId,
-                isHidden: false
+                showOtherPlayerCards: true
             }
 
             //Take cards from losing players

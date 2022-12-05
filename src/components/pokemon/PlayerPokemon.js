@@ -85,7 +85,7 @@ class PlayerPokemon extends Component {
         let shouldDisplay = false;
         if (this.props.player.playerTurn == this.props.p.id) {
             shouldDisplay = true;
-        } else if (!this.props.player.checkTrump.isHidden) {
+        } else if (this.props.player.checkTrump.showOtherPlayerCards) {
             shouldDisplay = true;
         }
 
