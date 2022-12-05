@@ -1,4 +1,4 @@
-import {INIT_PLAYER, LOAD_TRUMP, PLAY_TRUMP} from "../actions/player-actions";
+import {FINISH_LOADING_TRUMP, INIT_LOADING_TRUMP, INIT_PLAYER, LOAD_TRUMP, PLAY_TRUMP} from "../actions/player-actions";
 import {teal} from "@mui/material/colors";
 
 const initialState = {
@@ -16,6 +16,7 @@ const initialState = {
             name: "dummy name",
             cards: [],
             activePokemon: 1,
+            trumpLoaded: false,
             activeTrump: {
                 attributes: [{name: "", value: ""}],
                 isHidden: false,
@@ -40,8 +41,18 @@ export default function playerReducer(state = initialState, action) {
             s.playerMap.get(action.payload.p).activeTrump = action.payload.activeTrump;
             return s;
         }
+        case INIT_LOADING_TRUMP: {
+            let s = {...state};
+            s.playerMap.get(action.payload.id).trumpLoaded = action.payload.trumpLoaded;
+            return s;
+        }
+        case FINISH_LOADING_TRUMP:{
+            let s = {...state};
+            s.playerMap.get(action.payload.id).trumpLoaded = action.payload.trumpLoaded;
+            return s;
+        }
         case PLAY_TRUMP: {
-            console.log("Play trump action ", action)
+
             let s = {...state};
             let trumpInitiator = action.payload.pId;
             let attributeNameClicked = action.payload.attributeNameClicked;

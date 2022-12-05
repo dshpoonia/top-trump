@@ -2,7 +2,7 @@ import React, {Component, useEffect} from "react";
 
 import {teal} from "@mui/material/colors";
 import TrumpCard from "../pages/TrumpCard";
-import {loadTrump} from "../../actions/player-actions";
+import {finishLoadingTrump, initLoadingTrump, loadTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
@@ -14,6 +14,7 @@ import BounceTrumpCard from "../pages/BounceTrumpCard";
 const PlayerPokemon = (props) => {
 
     useEffect(() => {
+        props.initLoadingTrump({id: props.p.id, trumpLoaded: false});
         let url = "https://pokeapi.co/api/v2/pokemon/" + props.p.activePokemon;
         fetch(url)
             .then((res) => res.json())
@@ -60,6 +61,7 @@ const PlayerPokemon = (props) => {
                                 activeTrump.isHidden = false;
 
                                 props.loadTrump({p: props.p.id, activeTrump: activeTrump})
+                                props.finishLoadingTrump({id: props.p.id, trumpLoaded: true});
                             },
                             (error) => {
                                 console.log("Error fetching pokemon extra details");
@@ -103,7 +105,9 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = {
-    loadTrump
+    loadTrump,
+    initLoadingTrump,
+    finishLoadingTrump
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerPokemon);
