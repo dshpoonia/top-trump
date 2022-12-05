@@ -5,9 +5,13 @@ import TrumpCard from "../pages/TrumpCard";
 import {loadTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
 import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
 import {capitalizeFirstLetter, getBackgroundColor} from "../../services/pokemonOperations";
+import pokemonImg from "../../static/images/player/pokemon.jpeg";
+import {styled} from "@mui/material/styles";
 
 class PlayerPokemon extends Component {
+
 
     componentDidMount() {
         let url = "https://pokeapi.co/api/v2/pokemon/" + this.props.p.cards[0];
@@ -71,6 +75,13 @@ class PlayerPokemon extends Component {
 
     render() {
 
+        const Img = styled('img')({
+            margin: 'auto',
+            display: 'block',
+            maxWidth: '100%',
+            maxHeight: '100%',
+        });
+
         let shouldDisplay = false;
         if (this.props.player.playerTurn == this.props.p.id) {
             shouldDisplay = true;
@@ -80,8 +91,8 @@ class PlayerPokemon extends Component {
 
         return (
             <Grid>
-                {shouldDisplay && <TrumpCard p={this.props.p}/>
-                }
+                {shouldDisplay && <TrumpCard p={this.props.p}/>}
+                {!shouldDisplay && <Card> <Img alt="pokemon" src={pokemonImg} /> </Card>}
 
             </Grid>
         );
