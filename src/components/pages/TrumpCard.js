@@ -22,6 +22,7 @@ import {Component, useEffect, useState} from "react";
 import Grid from "@material-ui/core/Grid";
 import {playTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
+import Zoom from 'react-reveal/Zoom';
 
 class TrumpCard extends Component {
 
@@ -63,7 +64,7 @@ class TrumpCard extends Component {
             </List>
 
         return (
-            <>
+            <Zoom>
                 {this.props.p &&
                     <Card sx={{bgcolor: trump.cardBackground}}>
                         <CardHeader
@@ -92,7 +93,7 @@ class TrumpCard extends Component {
                         </CardActions>
                     </Card>
                 }
-            </>
+            </Zoom>
         );
     }
 }
