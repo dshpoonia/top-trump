@@ -20,7 +20,6 @@ class InitPlayers extends Component {
                 id: "p" + i,
                 name: "Player" + 1,
                 cards: cards,
-                activePokemon: cards[0],
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
                     isHidden: false,
@@ -42,7 +41,6 @@ class InitPlayers extends Component {
                 id: "b" + i,
                 name: "Bot" + i,
                 cards: cards,
-                activePokemon: cards[0],
                 activeTrump: {
                     attributes: [{name: "", value: ""}],
                     isHidden: true,

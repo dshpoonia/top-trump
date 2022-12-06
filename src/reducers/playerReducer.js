@@ -15,7 +15,6 @@ const initialState = {
             id: "dummy",
             name: "dummy name",
             cards: [],
-            activePokemon: 1,
             trumpLoaded: false,
             activeTrump: {
                 attributes: [{name: "", value: ""}],
@@ -80,7 +79,6 @@ export default function playerReducer(state = initialState, action) {
             //Take cards from losing players
             s.playerMap.forEach((p, pId) => {
                 s.playerMap.get(winningPlayerId).cards.push(p.cards.shift())
-                p.activePokemon = p.cards[0];
             })
 
 

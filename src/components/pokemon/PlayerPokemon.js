@@ -12,7 +12,7 @@ const PlayerPokemon = (props) => {
 
     useEffect(() => {
         props.loadPokemon({player: props.p});
-    }, [props.p.activePokemon])
+    }, [props.p.cards.length])
 
     const Img = styled('img')({
         margin: 'auto',
