@@ -1,12 +1,12 @@
 import React, {useEffect} from "react";
 
-import {loadPokemon} from "../../actions/player-actions";
 import {connect} from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import pokemonImg from "../../static/images/player/pokemon.jpeg";
 import {styled} from "@mui/material/styles";
 import BounceTrumpCard from "../pages/BounceTrumpCard";
+import {loadPokemon} from "../../actions/pokemon-actions";
 
 const PlayerPokemon = (props) => {
 

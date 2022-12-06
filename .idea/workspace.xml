@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="moving API call to action function">
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/playerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/playerReducer.js" afterDir="false" />
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="removing unnecessary field">
+      <change afterPath="$PROJECT_DIR$/src/actions/pokemon-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/player-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/player-actions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +117,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/dpoonia/Projects/github/top-trump",
+    "last_opened_file_path": "/Users/dpoonia/Projects/github/top-trump/src/actions",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -176,7 +175,7 @@
       <workItem from="1553601623938" duration="1765000" />
       <workItem from="1669564999421" duration="61660000" />
       <workItem from="1670262775408" duration="5546000" />
-      <workItem from="1670268540210" duration="9167000" />
+      <workItem from="1670268540210" duration="9485000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -437,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670357170282</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="removing unnecessary field">
+      <created>1670357313126</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1670357313126</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -509,7 +515,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="use effect on trump card" />
     <MESSAGE value="redux for state management" />
     <MESSAGE value="init player redux" />
     <MESSAGE value="unique keys" />
@@ -534,7 +539,8 @@
     <MESSAGE value="pokemon change" />
     <MESSAGE value="pokemon change and loading state" />
     <MESSAGE value="moving API call to action function" />
-    <option name="LAST_COMMIT_MESSAGE" value="moving API call to action function" />
+    <MESSAGE value="removing unnecessary field" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing unnecessary field" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">
