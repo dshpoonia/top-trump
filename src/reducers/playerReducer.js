@@ -43,6 +43,7 @@ export default function playerReducer(state = initialState, action) {
         }
         case INIT_LOADING_TRUMP: {
             let s = {...state};
+            console.log("INIT_LOADING_TRUMP", action.payload)
             s.playerMap.get(action.payload.id).trumpLoaded = action.payload.trumpLoaded;
             return s;
         }
