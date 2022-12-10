@@ -16,15 +16,6 @@ export function initPlayer(player) {
     };
 }
 
-export function loadTrump(trump) {
-    return dispatch => {
-        dispatch({
-            type: LOAD_TRUMP,
-            payload: trump
-        })
-    };
-}
-
 export function playTrump(attribute) {
     return dispatch => {
         dispatch({
@@ -35,6 +26,13 @@ export function playTrump(attribute) {
             type: CHANGE_GAME_STATUS,
             payload: {status: GameStatus.DISPLAYING_RESULTS}
         })
+
+        setTimeout(() => {
+            dispatch({
+                type: CHANGE_GAME_STATUS,
+                payload: {status: GameStatus.PLAYING}
+            })
+        }, 4000)
 
     };
 }

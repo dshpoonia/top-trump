@@ -13,7 +13,6 @@ const PlayerPokemon = (props) => {
 
     useEffect(() => {
         props.loadPokemon({player: props.p});
-        console.log("Game status ", props.game);
 
     }, [props.p.cards.length])
 

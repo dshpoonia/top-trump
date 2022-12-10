@@ -1,6 +1,6 @@
 import {teal} from "@mui/material/colors";
 import {capitalizeFirstLetter, getBackgroundColor} from "../services/pokemonOperations";
-import {FINISH_LOADING_TRUMP, INIT_LOADING_TRUMP, LOAD_TRUMP} from "./player-actions";
+import {INIT_LOADING_TRUMP, LOAD_TRUMP} from "./player-actions";
 export function loadPokemon(payload){
     return dispatch => {
 
@@ -60,7 +60,7 @@ export function loadPokemon(payload){
                                         type: LOAD_TRUMP,
                                         payload: {p: payload.player.id, activeTrump: activeTrump}
                                     })
-                                }, 3000)
+                                }, 5000)
 
 
                             },
