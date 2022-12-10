@@ -25,13 +25,13 @@ const PlayerPokemon = (props) => {
     });
 
     let shouldDisplay = false;
-    if(props.player.playerTurn == props.p.id){
-        if(props.game.status === GameStatus.PLAYING){
-            shouldDisplay = true;
-        }
+    if(props.game.status === GameStatus.DISPLAYING_RESULTS){
+        shouldDisplay = true;
     }else{
-        if(props.game.status === GameStatus.DISPLAYING_RESULTS){
+        if(props.player.playerTurn == props.p.id){
             shouldDisplay = true;
+        }else{
+            shouldDisplay = false;
         }
     }
 
