@@ -18,12 +18,18 @@ import ListItemText from '@mui/material/ListItemText';
 import Grid from "@material-ui/core/Grid";
 import {playTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
+import {useEffect} from "react";
 
 const TrumpCard = (props)  => {
 
     const [selectedAttribute, setSelectedAttribute] = React.useState("");
+
+    useEffect(()=>{
+        setSelectedAttribute("");
+    }, [props.p.activeTrump])
+
         const handleListItemClick = (attribute) => {
-            if (props.p.id === props.player.playerTurn) {
+            if (props.p.id === props.player.playerTurn && selectedAttribute === "") {
                 props.playTrump({
                     pId: props.p.id,
                     attributeNameClicked: attribute.name,
@@ -43,7 +49,7 @@ const TrumpCard = (props)  => {
                             <Grid key={props.p.id + attribute.name} item xs={6}>
 
                                 <ListItem
-                                    button={props.p.id === props.player.playerTurn}
+                                    button={props.p.id === props.player.playerTurn && selectedAttribute === ""}
                                     onClick={() => handleListItemClick(attribute)}
                                     selected={selectedAttribute === attribute.name}>
                                     <Grid container columns={12}>
