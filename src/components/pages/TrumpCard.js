@@ -15,37 +15,33 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
-import {Component} from "react";
 import Grid from "@material-ui/core/Grid";
 import {playTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
 
-class TrumpCard extends Component {
-
-    render() {
-
+const TrumpCard = (props)  => {
 
         const handleListItemClick = (attribute) => {
-            if (this.props.p.id === this.props.player.playerTurn) {
-                this.props.playTrump({
-                    pId: this.props.p.id,
+            if (props.p.id === props.player.playerTurn) {
+                props.playTrump({
+                    pId: props.p.id,
                     attributeNameClicked: attribute.name,
                     attributeValueClicked: attribute.value
                 })
             }
         };
 
-        const trump = this.props.p.activeTrump;
+        const trump = props.p.activeTrump;
         const listItems =
             <List aria-label="stats-buttons">
                 <Grid container columns={12}>
                     {
                         trump.attributes.map(attribute => (
 
-                            <Grid key={this.props.p.id + attribute.name} item xs={6}>
+                            <Grid key={props.p.id + attribute.name} item xs={6}>
 
                                 <ListItem
-                                    button={this.props.p.id === this.props.player.playerTurn}
+                                    button={props.p.id === props.player.playerTurn}
                                     onClick={() => handleListItemClick(attribute)}
                                     selected={true}>
                                     <Grid container columns={12}>
@@ -68,7 +64,7 @@ class TrumpCard extends Component {
 
         return (
             <>
-                {this.props.p &&
+                {props.p &&
                     <Card sx={{bgcolor: trump.cardBackground}}>
                         <CardHeader
                             avatar={
@@ -98,7 +94,6 @@ class TrumpCard extends Component {
                 }
             </>
         );
-    }
 }
 
 const mapStateToProps = (state, props) => {
