@@ -4,21 +4,13 @@ export const PLAY_TRUMP = "PLAY_TRUMP";
 
 export const INIT_LOADING_TRUMP = "INIT_LOADING_TRUMP";
 export const FINISH_LOADING_TRUMP = "FINISH_LOADING_TRUMP";
+export const HIDE_OTHER_PLAYER_CARDS = "HIDE_OTHER_PLAYER_CARDS";
 
-export function initLoadingTrump(loadingTrump){
+export function hideOtherPlayerCards(){
     return dispatch => {
         dispatch({
-            type: INIT_LOADING_TRUMP,
-            payload: loadingTrump
-        })
-    };
-}
-
-export function finishLoadingTrump(loadingTrump){
-    return dispatch => {
-        dispatch({
-            type: FINISH_LOADING_TRUMP,
-            payload: loadingTrump
+            type: HIDE_OTHER_PLAYER_CARDS,
+            payload: {}
         })
     };
 }

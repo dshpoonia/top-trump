@@ -7,11 +7,17 @@ import pokemonImg from "../../static/images/player/pokemon.jpeg";
 import {styled} from "@mui/material/styles";
 import BounceTrumpCard from "../pages/BounceTrumpCard";
 import {loadPokemon} from "../../actions/pokemon-actions";
+import {hideOtherPlayerCards} from "../../actions/player-actions";
 
 const PlayerPokemon = (props) => {
 
     useEffect(() => {
         props.loadPokemon({player: props.p});
+
+        if(props.p.id == props.player.playerTurn){
+            props.hideOtherPlayerCards();
+        }
+
     }, [props.p.cards.length])
 
     const Img = styled('img')({
@@ -22,7 +28,7 @@ const PlayerPokemon = (props) => {
     });
 
     let shouldDisplay = false;
-    if (props.player.playerTurn == props.p.id) {
+    if (props.player.playerTurn == props.p.id && props.player.trumpLoaded) {
         shouldDisplay = true;
     } else if (props.player.checkTrump.showOtherPlayerCards) {
         shouldDisplay = true;
@@ -43,7 +49,8 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = {
-    loadPokemon
+    loadPokemon,
+    hideOtherPlayerCards
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerPokemon);

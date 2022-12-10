@@ -1,4 +1,11 @@
-import {FINISH_LOADING_TRUMP, INIT_LOADING_TRUMP, INIT_PLAYER, LOAD_TRUMP, PLAY_TRUMP} from "../actions/player-actions";
+import {
+    FINISH_LOADING_TRUMP,
+    HIDE_OTHER_PLAYER_CARDS,
+    INIT_LOADING_TRUMP,
+    INIT_PLAYER,
+    LOAD_TRUMP,
+    PLAY_TRUMP
+} from "../actions/player-actions";
 import {teal} from "@mui/material/colors";
 
 const initialState = {
@@ -32,6 +39,7 @@ const initialState = {
 };
 
 export default function playerReducer(state = initialState, action) {
+    console.log("Reducer", action)
     switch (action.type) {
         case INIT_PLAYER:
             return action.payload;
@@ -42,13 +50,18 @@ export default function playerReducer(state = initialState, action) {
         }
         case INIT_LOADING_TRUMP: {
             let s = {...state};
-            console.log("INIT_LOADING_TRUMP", action.payload)
             s.playerMap.get(action.payload.id).trumpLoaded = action.payload.trumpLoaded;
             return s;
         }
         case FINISH_LOADING_TRUMP:{
             let s = {...state};
             s.playerMap.get(action.payload.id).trumpLoaded = action.payload.trumpLoaded;
+            return s;
+        }
+
+        case HIDE_OTHER_PLAYER_CARDS:{
+            let s = {...state};
+            s.checkTrump.showOtherPlayerCards = false;
             return s;
         }
         case PLAY_TRUMP: {

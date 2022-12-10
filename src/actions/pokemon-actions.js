@@ -55,10 +55,14 @@ export function loadPokemon(payload){
 
                                 activeTrump.isHidden = false;
 
-                                dispatch({
-                                    type: LOAD_TRUMP,
-                                    payload: {p: payload.player.id, activeTrump: activeTrump}
-                                })
+                                setTimeout(() => {
+                                    dispatch({
+                                        type: LOAD_TRUMP,
+                                        payload: {p: payload.player.id, activeTrump: activeTrump}
+                                    })
+                                }, 3000)
+
+
 
                                 dispatch({
                                     type: FINISH_LOADING_TRUMP,
