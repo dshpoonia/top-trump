@@ -3,17 +3,6 @@ export const LOAD_TRUMP = "LOAD_TRUMP";
 export const PLAY_TRUMP = "PLAY_TRUMP";
 
 export const INIT_LOADING_TRUMP = "INIT_LOADING_TRUMP";
-export const FINISH_LOADING_TRUMP = "FINISH_LOADING_TRUMP";
-export const HIDE_OTHER_PLAYER_CARDS = "HIDE_OTHER_PLAYER_CARDS";
-
-export function hideOtherPlayerCards(){
-    return dispatch => {
-        dispatch({
-            type: HIDE_OTHER_PLAYER_CARDS,
-            payload: {}
-        })
-    };
-}
 
 export function initPlayer(player) {
     return dispatch => {
@@ -39,5 +28,7 @@ export function playTrump(attribute) {
             type: PLAY_TRUMP,
             payload: attribute
         })
+
+
     };
 }

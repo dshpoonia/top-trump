@@ -1,6 +1,4 @@
 import {
-    FINISH_LOADING_TRUMP,
-    HIDE_OTHER_PLAYER_CARDS,
     INIT_LOADING_TRUMP,
     INIT_PLAYER,
     LOAD_TRUMP,
@@ -44,6 +42,7 @@ export default function playerReducer(state = initialState, action) {
         case LOAD_TRUMP: {
             let s = {...state};
             s.playerMap.get(action.payload.p).activeTrump = action.payload.activeTrump;
+            s.playerMap.get(action.payload.p).trumpLoaded = true;
             return s;
         }
         case INIT_LOADING_TRUMP: {
@@ -51,16 +50,7 @@ export default function playerReducer(state = initialState, action) {
             s.playerMap.get(action.payload.id).trumpLoaded = action.payload.trumpLoaded;
             return s;
         }
-        case FINISH_LOADING_TRUMP:{
-            let s = {...state};
-            s.playerMap.get(action.payload.id).trumpLoaded = action.payload.trumpLoaded;
-            return s;
-        }
 
-        case HIDE_OTHER_PLAYER_CARDS:{
-            let s = {...state};
-            return s;
-        }
         case PLAY_TRUMP: {
 
             let s = {...state};

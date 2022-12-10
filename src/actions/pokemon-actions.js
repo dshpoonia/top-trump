@@ -63,12 +63,6 @@ export function loadPokemon(payload){
                                 }, 3000)
 
 
-
-                                dispatch({
-                                    type: FINISH_LOADING_TRUMP,
-                                    payload: {id: payload.player.id, trumpLoaded: true}
-                                })
-
                             },
                             (error) => {
                                 console.log("Error fetching pokemon extra details");
