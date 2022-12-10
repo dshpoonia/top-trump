@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="hide player card">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="game status field">
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/InitPlayers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PlayerPokemon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PokemonHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/gameReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/gameReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/playerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/playerReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +176,7 @@
       <workItem from="1553601623938" duration="1765000" />
       <workItem from="1669564999421" duration="61660000" />
       <workItem from="1670262775408" duration="5546000" />
-      <workItem from="1670268540210" duration="15764000" />
+      <workItem from="1670268540210" duration="16278000" />
     </task>
     <task id="LOCAL-00001" summary="Pokemon display">
       <created>1669576153270</created>
@@ -459,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670694250408</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="game status field">
+      <created>1670696836376</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1670696836376</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -531,7 +537,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="unique keys" />
     <MESSAGE value="console errors" />
     <MESSAGE value="store set" />
     <MESSAGE value="functional to class" />
@@ -556,7 +561,8 @@
     <MESSAGE value="removing unnecessary field" />
     <MESSAGE value="moving pokemon get code to pokemon-action" />
     <MESSAGE value="hide player card" />
-    <option name="LAST_COMMIT_MESSAGE" value="hide player card" />
+    <MESSAGE value="game status field" />
+    <option name="LAST_COMMIT_MESSAGE" value="game status field" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">

@@ -8,6 +8,7 @@ import {styled} from "@mui/material/styles";
 import BounceTrumpCard from "../pages/BounceTrumpCard";
 import {loadPokemon} from "../../actions/pokemon-actions";
 import {hideOtherPlayerCards} from "../../actions/player-actions";
+import {GameStatus} from "../../reducers/gameReducer";
 
 const PlayerPokemon = (props) => {
 
@@ -29,10 +30,14 @@ const PlayerPokemon = (props) => {
     });
 
     let shouldDisplay = false;
-    if (props.player.playerTurn == props.p.id ) {
-        shouldDisplay = true;
-    } else if (props.player.checkTrump.showOtherPlayerCards) {
-        shouldDisplay = true;
+    if(props.player.playerTurn == props.p.id){
+        if(props.game.status === GameStatus.PLAYING){
+            shouldDisplay = true;
+        }
+    }else{
+        if(props.game.status === GameStatus.DISPLAYING_RESULTS){
+            shouldDisplay = true;
+        }
     }
 
     return (

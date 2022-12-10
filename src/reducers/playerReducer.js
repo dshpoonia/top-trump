@@ -14,9 +14,7 @@ const initialState = {
     playerTurn: "p1",
     checkTrump: {
         winningPlayer: "p1",
-        showOtherPlayerCards: false,
     },
-    displayCheckTrumpResult: false,
     playerMap: {
         p1: {
             id: "dummy",
@@ -61,7 +59,6 @@ export default function playerReducer(state = initialState, action) {
 
         case HIDE_OTHER_PLAYER_CARDS:{
             let s = {...state};
-            s.checkTrump.showOtherPlayerCards = false;
             return s;
         }
         case PLAY_TRUMP: {
@@ -85,10 +82,8 @@ export default function playerReducer(state = initialState, action) {
 
             s.checkTrump = {
                 winningPlayer: winningPlayerId,
-                showOtherPlayerCards: true
             }
 
-            s.displayCheckTrumpResult = true;
             //Take cards from losing players
             s.playerMap.forEach((p, pId) => {
                 s.playerMap.get(winningPlayerId).cards.push(p.cards.shift())

@@ -62,7 +62,6 @@ class InitPlayers extends Component {
             playerTurn: "p1",
             checkTrump: {
                 winningPlayer: "p1",
-                showOtherPlayerCards: false,
             },
             playerMap: playerMap
         }
