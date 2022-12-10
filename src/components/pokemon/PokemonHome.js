@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import InitPlayers from "./InitPlayers";
 import {initGame} from "../../actions/game-actions";
 import Container from '@mui/material/Container';
+import {GameStatus} from "../../reducers/gameReducer";
 
 class PokemonHome extends Component {
 
@@ -12,7 +13,7 @@ class PokemonHome extends Component {
             deckSize: 20,
             noOfBotPlayers: 1,
             noOfPlayers: 1,
-            initialized: true
+            status: GameStatus.PLAYING
 
         })
     }
@@ -20,7 +21,7 @@ class PokemonHome extends Component {
     render() {
         return (
             <Container>
-                {this.props.game.initialized && <InitPlayers/>}
+                {this.props.game.status === GameStatus.PLAYING  && <InitPlayers/>}
             </Container>
         );
     };

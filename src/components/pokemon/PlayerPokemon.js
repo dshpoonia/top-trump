@@ -15,6 +15,7 @@ const PlayerPokemon = (props) => {
         props.loadPokemon({player: props.p});
 
         if(props.p.id == props.player.playerTurn){
+
             props.hideOtherPlayerCards();
         }
 
@@ -28,7 +29,7 @@ const PlayerPokemon = (props) => {
     });
 
     let shouldDisplay = false;
-    if (props.player.playerTurn == props.p.id && props.player.trumpLoaded) {
+    if (props.player.playerTurn == props.p.id ) {
         shouldDisplay = true;
     } else if (props.player.checkTrump.showOtherPlayerCards) {
         shouldDisplay = true;
