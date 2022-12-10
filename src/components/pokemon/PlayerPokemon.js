@@ -12,7 +12,7 @@ import {GameStatus} from "../../reducers/gameReducer";
 const PlayerPokemon = (props) => {
 
     useEffect(() => {
-        props.loadPokemon({player: props.p});
+        props.loadPokemon({player: props.p, gameStatus: props.game.status});
 
     }, [props.p.cards.length])
 

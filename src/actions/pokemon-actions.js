@@ -1,6 +1,7 @@
 import {teal} from "@mui/material/colors";
 import {capitalizeFirstLetter, getBackgroundColor} from "../services/pokemonOperations";
 import {INIT_LOADING_TRUMP, LOAD_TRUMP} from "./player-actions";
+import {GameStatus} from "../reducers/gameReducer";
 export function loadPokemon(payload){
     return dispatch => {
 
@@ -55,12 +56,16 @@ export function loadPokemon(payload){
 
                                 activeTrump.isHidden = false;
 
+                                let delayInMs = 5000;
+                                if(payload.gameStatus === GameStatus.PLAYING){
+                                    delayInMs = 1;
+                                }
                                 setTimeout(() => {
                                     dispatch({
                                         type: LOAD_TRUMP,
                                         payload: {p: payload.player.id, activeTrump: activeTrump}
                                     })
-                                }, 5000)
+                                }, delayInMs)
 
 
                             },
