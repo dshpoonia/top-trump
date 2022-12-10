@@ -34,8 +34,8 @@ class TrumpCard extends Component {
 
                             <Grid key={this.props.p.id + attribute.name} item xs={6}>
 
-                                <ListItem button={this.props.p.id == this.props.player.playerTurn} onClick={() => {
-                                    if(this.props.p.id == this.props.player.playerTurn)
+                                <ListItem button={this.props.p.id === this.props.player.playerTurn} onClick={() => {
+                                    if(this.props.p.id === this.props.player.playerTurn)
                                     this.props.playTrump({
                                         pId: this.props.p.id,
                                         attributeNameClicked: attribute.name,

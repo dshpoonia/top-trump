@@ -35,7 +35,7 @@ export function loadPokemon(payload){
 
                     result.stats.forEach(function (stat) {
 
-                        if (stat.stat.name.indexOf("special") == -1) {
+                        if (stat.stat.name.indexOf("special") === -1) {
                             let s = {};
                             s.name = capitalizeFirstLetter(stat.stat.name);
                             s.value = stat.base_stat;
@@ -49,7 +49,7 @@ export function loadPokemon(payload){
                         .then(
                             (res) => {
                                 let lang = res.flavor_text_entries.filter((e) => {
-                                    return e.language.name == "en";
+                                    return e.language.name === "en";
                                 });
                                 activeTrump.cardContent = lang[0].flavor_text;
                                 activeTrump.cardBackground = getBackgroundColor(res.color.name);

@@ -27,7 +27,7 @@ const PlayerPokemon = (props) => {
     if(props.game.status === GameStatus.DISPLAYING_RESULTS){
         shouldDisplay = true;
     }else{
-        if(props.player.playerTurn == props.p.id){
+        if(props.player.playerTurn === props.p.id){
             shouldDisplay = true;
         }else{
             shouldDisplay = false;

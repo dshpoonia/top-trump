@@ -62,7 +62,7 @@ export default function playerReducer(state = initialState, action) {
             let winningPlayerAttributeValue = attributeValueClicked;
             s.playerMap.forEach((p, pId) => {
                 let att = p.activeTrump.attributes.filter((e) => {
-                    return e.name == attributeNameClicked
+                    return e.name === attributeNameClicked
                 })[0];
                 if (att.value > winningPlayerAttributeValue) {
                     winningPlayerId = pId;

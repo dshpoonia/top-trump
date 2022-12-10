@@ -14,28 +14,28 @@ export const capitalizeFirstLetter = (string) => {
 }
 
 export const getBackgroundColor = (color) => {
-    if (color == 'red') {
+    if (color === 'red') {
         return red[300];
     }
-    if (color == 'black' || color == 'gray') {
+    if (color === 'black' || color === 'gray') {
         return grey[300];
     }
-    if (color == 'blue') {
+    if (color === 'blue') {
         return blue[300];
     }
-    if (color == 'brown') {
+    if (color === 'brown') {
         return brown[300];
     }
-    if (color == 'green') {
+    if (color === 'green') {
         return green[300];
     }
-    if (color == 'pink') {
+    if (color === 'pink') {
         return pink[300];
     }
-    if (color == 'purple') {
+    if (color === 'purple') {
         return purple[300];
     }
-    if (color == 'yellow') {
+    if (color === 'yellow') {
         return yellow[300];
     }
 
