@@ -23,15 +23,11 @@ const PlayerPokemon = (props) => {
         maxHeight: '100%',
     });
 
-    let shouldDisplay = false;
+    let shouldDisplay;
     if(props.game.status === GameStatus.DISPLAYING_RESULTS){
         shouldDisplay = true;
     }else{
-        if(props.player.playerTurn === props.p.id){
-            shouldDisplay = true;
-        }else{
-            shouldDisplay = false;
-        }
+        shouldDisplay = props.player.playerTurn === props.p.id;
     }
 
     return (

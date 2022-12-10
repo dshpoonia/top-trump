@@ -2,7 +2,7 @@ import {
     INIT_LOADING_TRUMP,
     INIT_PLAYER,
     LOAD_TRUMP,
-    PLAY_TRUMP
+    PLAY_TRUMP, UPDATE_PLAYER
 } from "../actions/player-actions";
 import {teal} from "@mui/material/colors";
 
@@ -11,7 +11,7 @@ const initialState = {
     initialized: false,
     playerTurn: "p1",
     checkTrump: {
-        winningPlayer: "p1",
+        winningPlayer: "",
     },
     playerMap: {
         p1: {
@@ -35,8 +35,12 @@ const initialState = {
 };
 
 export default function playerReducer(state = initialState, action) {
-    console.log("Reducer", action)
     switch (action.type) {
+        case UPDATE_PLAYER:
+            return {
+                ...state,
+                ...action.payload
+            };
         case INIT_PLAYER:
             return action.payload;
         case LOAD_TRUMP: {
