@@ -1,4 +1,4 @@
-import {INIT_GAME} from "../actions/game-actions";
+import {CHANGE_GAME_STATUS, INIT_GAME} from "../actions/game-actions";
 
 export const GameStatus = {
     NOT_STARTED: "NOT_STARTED",
@@ -19,11 +19,11 @@ const initialState = {
 export default function gameReducer(state = initialState, action) {
     switch (action.type) {
         case INIT_GAME:
+        case CHANGE_GAME_STATUS:
             return {
                 ...state,
                 ...action.payload
             };
-
         default:
             return {...state};
     }
