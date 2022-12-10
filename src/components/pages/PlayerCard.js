@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import {teal} from "@mui/material/colors";
+import {green, red, teal} from "@mui/material/colors";
 import userImg from '../../static/images/player/user.png'
 import botImg from '../../static/images/player/bot.png'
 
-import { styled } from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
@@ -20,17 +20,27 @@ const Img = styled('img')({
     maxHeight: '100%',
 });
 
-const PlayerCard = (props)  => {
+const PlayerCard = (props) => {
 
-    useEffect(()=>{},[])
+    useEffect(() => {
+    }, [])
+    let bgcolor = teal[300];
+    if (!props.player.checkTrump.winningPlayer == "") {
+        if (props.p.id === props.player.checkTrump.winningPlayer) {
+            bgcolor = green[300];
+        } else {
+            bgcolor = red[300];
+        }
+    }
+
     const playerInfo = props.p;
     return (
-        <Paper sx={{bgcolor: teal[300]}}>
+        <Paper sx={{bgcolor: bgcolor}}>
             <Grid container spacing={2}>
                 <Grid item xs={3}>
-                    <ButtonBase >
-                        {playerInfo.id === "b1" && <Img alt="user" src={botImg} />}
-                        {playerInfo.id !== "b1" && <Img alt="user" src={userImg} />}
+                    <ButtonBase>
+                        {playerInfo.id === "b1" && <Img alt="user" src={botImg}/>}
+                        {playerInfo.id !== "b1" && <Img alt="user" src={userImg}/>}
                     </ButtonBase>
                 </Grid>
                 <Grid item xs={5} sm container>
@@ -64,7 +74,7 @@ const PlayerCard = (props)  => {
 }
 
 const mapStateToProps = (state, props) => {
-    return { ...state, ...props };
+    return {...state, ...props};
 };
 
 const mapDispatchToProps = {

@@ -60,7 +60,7 @@ class InitPlayers extends Component {
             initialized: true,
             playerTurn: "p1",
             checkTrump: {
-                winningPlayer: "p1",
+                winningPlayer: "",
             },
             playerMap: playerMap
         }
