@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="early initial load">
-      <change beforePath="$PROJECT_DIR$/src/actions/pokemon-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/pokemon-actions.js" afterDir="false" />
+    <list default="true" id="7692ea73-5a43-42e5-a8b8-cb95c53959a6" name="Default Changelist" comment="unused imports">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/TrumpCard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,21 +175,7 @@
       <workItem from="1553601623938" duration="1765000" />
       <workItem from="1669564999421" duration="61660000" />
       <workItem from="1670262775408" duration="5546000" />
-      <workItem from="1670268540210" duration="20473000" />
-    </task>
-    <task id="LOCAL-00001" summary="Pokemon display">
-      <created>1669576153270</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1669576153270</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Pokemon card color">
-      <created>1669576586241</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1669576586241</updated>
+      <workItem from="1670268540210" duration="21532000" />
     </task>
     <task id="LOCAL-00003" summary="pokemon stats display fix">
       <created>1669578668387</created>
@@ -512,7 +499,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670701149336</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="trump title fix">
+      <created>1670701539254</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1670701539254</updated>
+    </task>
+    <task id="LOCAL-00050" summary="sonar fixes">
+      <created>1670701736364</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1670701736366</updated>
+    </task>
+    <task id="LOCAL-00051" summary="unused imports">
+      <created>1670701850456</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1670701850456</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -584,9 +592,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="secondary image url" />
-    <MESSAGE value="idea folder in gitingore" />
-    <MESSAGE value="dead code" />
     <MESSAGE value="console and warning" />
     <MESSAGE value="layout fixes" />
     <MESSAGE value="trump winning" />
@@ -609,7 +614,10 @@
     <MESSAGE value="change game status reducer" />
     <MESSAGE value="pokemon display logic fix" />
     <MESSAGE value="early initial load" />
-    <option name="LAST_COMMIT_MESSAGE" value="early initial load" />
+    <MESSAGE value="trump title fix" />
+    <MESSAGE value="sonar fixes" />
+    <MESSAGE value="unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="unused imports" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.css">

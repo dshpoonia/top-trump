@@ -25,6 +25,16 @@ class TrumpCard extends Component {
     render() {
 
 
+        const handleListItemClick = (attribute) => {
+            if (this.props.p.id === this.props.player.playerTurn) {
+                this.props.playTrump({
+                    pId: this.props.p.id,
+                    attributeNameClicked: attribute.name,
+                    attributeValueClicked: attribute.value
+                })
+            }
+        };
+
         const trump = this.props.p.activeTrump;
         const listItems =
             <List aria-label="stats-buttons">
@@ -34,14 +44,10 @@ class TrumpCard extends Component {
 
                             <Grid key={this.props.p.id + attribute.name} item xs={6}>
 
-                                <ListItem button={this.props.p.id === this.props.player.playerTurn} onClick={() => {
-                                    if(this.props.p.id === this.props.player.playerTurn)
-                                    this.props.playTrump({
-                                        pId: this.props.p.id,
-                                        attributeNameClicked: attribute.name,
-                                        attributeValueClicked: attribute.value
-                                    })
-                                }}>
+                                <ListItem
+                                    button={this.props.p.id === this.props.player.playerTurn}
+                                    onClick={() => handleListItemClick(attribute)}
+                                    selected={true}>
                                     <Grid container columns={12}>
                                         <Grid item xs={8}>
                                             <ListItemText primary={attribute.name}/>
