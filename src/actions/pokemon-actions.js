@@ -23,7 +23,7 @@ export function loadPokemon(payload){
                     activeTrump.isHidden = true;
                     activeTrump.background = teal[300];
                     activeTrump.avatarHeader = result.name.toUpperCase()[0];
-                    activeTrump.header = result.name.toUpperCase();
+                    activeTrump.title = capitalizeFirstLetter(result.name)
                     activeTrump.subheader = capitalizeFirstLetter(result.types[0].type.name);
                     //activeTrump.image = result.sprites.other.home.front_default;
                     activeTrump.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + payload.player.cards[0] + ".png"
