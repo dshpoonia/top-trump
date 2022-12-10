@@ -33,7 +33,7 @@ export function playTrump(attribute) {
         })
         dispatch({
             type: CHANGE_GAME_STATUS,
-            playload: {status: GameStatus.DISPLAYING_RESULTS}
+            payload: {status: GameStatus.DISPLAYING_RESULTS}
         })
 
     };

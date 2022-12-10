@@ -21,7 +21,7 @@ class PokemonHome extends Component {
     render() {
         return (
             <Container>
-                {this.props.game.status === GameStatus.PLAYING  && <InitPlayers/>}
+                {this.props.game.status !== GameStatus.NOT_STARTED  && <InitPlayers/>}
             </Container>
         );
     };
