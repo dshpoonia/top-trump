@@ -11,10 +11,11 @@ class InitPlayers extends Component {
     componentDidMount()  {
         let playerMap = new Map();
         let arr = getMasterPokemonIndex();
-        const rnd = new Srand(arr.length);
+        const rnd = new Srand();
+        arr = rnd.shuffle(arr);
 
         for (let i = 1; i <= this.props.game.noOfPlayers; i++) {
-            let cards = rnd.sample(arr, this.props.game.deckSize);
+            let cards = rnd.choices(arr, this.props.game.deckSize);
             let p = {
                 id: "p" + i,
                 name: "Player" + 1,
