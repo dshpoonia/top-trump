@@ -17,10 +17,6 @@ import NoPageFound from "./components/pages/NoPageFound";
 import PokemonHome from "./components/pokemon/PokemonHome";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-  }
 
   render() {
     const theme = createTheme(this.props.settings);

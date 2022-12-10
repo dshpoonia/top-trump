@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from "react";
+import React, {Component} from "react";
 import {connect} from "react-redux";
 import InitPlayers from "./InitPlayers";
 import {initGame} from "../../actions/game-actions";

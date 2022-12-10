@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {Component} from "react";
 
 import PlayerPokemon from "./PlayerPokemon";
 import Grid from "@material-ui/core/Grid";

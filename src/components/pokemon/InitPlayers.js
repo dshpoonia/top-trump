@@ -1,7 +1,6 @@
-import React, {Component, useEffect} from "react";
+import React, {Component} from "react";
 import Srand from "seeded-rand";
 import InitLayout from "./InitLayout";
-import Grid from "@material-ui/core/Grid";
 import {initPlayer} from "../../actions/player-actions";
 import {connect} from "react-redux";
 import {teal} from "@mui/material/colors";
