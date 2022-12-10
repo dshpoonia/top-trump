@@ -21,6 +21,7 @@ import {connect} from "react-redux";
 
 const TrumpCard = (props)  => {
 
+    const [selectedAttribute, setSelectedAttribute] = React.useState("");
         const handleListItemClick = (attribute) => {
             if (props.p.id === props.player.playerTurn) {
                 props.playTrump({
@@ -28,6 +29,7 @@ const TrumpCard = (props)  => {
                     attributeNameClicked: attribute.name,
                     attributeValueClicked: attribute.value
                 })
+                setSelectedAttribute(attribute.name);
             }
         };
 
@@ -43,7 +45,7 @@ const TrumpCard = (props)  => {
                                 <ListItem
                                     button={props.p.id === props.player.playerTurn}
                                     onClick={() => handleListItemClick(attribute)}
-                                    selected={true}>
+                                    selected={selectedAttribute === attribute.name}>
                                     <Grid container columns={12}>
                                         <Grid item xs={8}>
                                             <ListItemText primary={attribute.name}/>
