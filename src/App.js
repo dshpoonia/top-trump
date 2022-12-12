@@ -25,7 +25,6 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
-          <AppBar />
           <Switch>
             <Route exact path={"/"}  component={HomePage} />
             <Route exact path={"/pokemon"} component={PokemonHome} />
