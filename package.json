@@ -1,6 +1,7 @@
 {
-  "name": "material-ui-starter",
-  "version": "0.1.0",
+  "name": "top-trump",
+  "homepage": "https://dshpoonia.github.io/top-trump",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -11,6 +12,7 @@
     "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "gh-pages": "^4.0.0",
     "local-storage": "^1.4.2",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
@@ -32,7 +34,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
