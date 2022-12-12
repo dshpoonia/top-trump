@@ -49,6 +49,7 @@ const TrumpCard = (props)  => {
                             <Grid key={props.p.id + attribute.name} item xs={6}>
 
                                 <ListItem
+                                    disabled={props.p.id === props.player.playerTurn && selectedAttribute !== ""}
                                     button={props.p.id === props.player.playerTurn && selectedAttribute === ""}
                                     onClick={() => handleListItemClick(attribute)}
                                     selected={selectedAttribute === attribute.name}>
