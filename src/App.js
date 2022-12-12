@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 // Material UI Imports
 import { MuiThemeProvider, createTheme } from "@material-ui/core/styles";
@@ -27,8 +27,8 @@ class App extends Component {
         <Router>
           <AppBar />
           <Switch>
-            <Route path={"/"} exact /*strict*/ component={HomePage} />
-            <Route path={"/pokemon"} exact /*strict*/ component={PokemonHome} />
+            <Route exact path={"/"}  component={HomePage} />
+            <Route exact path={"/pokemon"} component={PokemonHome} />
             <Route exact /*strict*/ component={NoPageFound} />
           </Switch>
         </Router>
