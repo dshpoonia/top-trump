@@ -37,23 +37,17 @@ const PlayerCard = (props) => {
     return (
         <Paper sx={{bgcolor: bgcolor}}>
             <Grid container spacing={2}>
-                <Grid item xs={3}>
-                    <ButtonBase>
-                        {playerInfo.id === "b1" && <Img alt="user" src={botImg}/>}
-                        {playerInfo.id !== "b1" && <Img alt="user" src={userImg}/>}
-                    </ButtonBase>
-                </Grid>
-                <Grid item xs={5} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
-                        <Grid item xs>
-                            <Typography gutterBottom variant="subtitle1" component="div">
-                                {playerInfo.name}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                ID: {playerInfo.id}
-                            </Typography>
-                        </Grid>
+
+                <Grid item xs={12} sm container>
+
+                    <Grid item xs={6}>
+                        <ButtonBase>
+                            {playerInfo.id === "b1" && <Img alt="user" src={botImg}/>}
+                            {playerInfo.id !== "b1" && <Img alt="user" src={userImg}/>}
+                        </ButtonBase>
                     </Grid>
+
+                    <Grid item xs={2}></Grid>
                     <Grid item xs={4}>
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs>
@@ -63,10 +57,17 @@ const PlayerCard = (props) => {
                                 <Typography variant="subtitle1" component="div">
                                     {playerInfo.cards && playerInfo.cards.length}
                                 </Typography>
+                                <Typography gutterBottom variant="subtitle1" component="div">
+                                    {playerInfo.name}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    ID: {playerInfo.id}
+                                </Typography>
                             </Grid>
                         </Grid>
 
                     </Grid>
+
                 </Grid>
             </Grid>
         </Paper>
