@@ -31,11 +31,11 @@ const PlayerPokemon = (props) => {
     }
 
     return (
-        <Grid>
+        <>
             {shouldDisplay && <BounceTrumpCard p={props.p}/>}
             {!shouldDisplay && <Card> <Img alt="pokemon" src={pokemonImg}/> </Card>}
 
-        </Grid>
+        </>
     );
 
 }

@@ -19,6 +19,7 @@ import Grid from "@material-ui/core/Grid";
 import {playTrump} from "../../actions/player-actions";
 import {connect} from "react-redux";
 import {useEffect} from "react";
+import {TextField} from "@mui/material";
 
 const TrumpCard = (props)  => {
 
@@ -46,14 +47,14 @@ const TrumpCard = (props)  => {
                     {
                         trump.attributes.map(attribute => (
 
-                            <Grid key={props.p.id + attribute.name} item xs={6}>
+                            <Grid key={props.p.id + attribute.name} item xs={12} xm={6}>
 
                                 <ListItem
                                     disabled={props.p.id === props.player.playerTurn && selectedAttribute !== ""}
                                     button={props.p.id === props.player.playerTurn && selectedAttribute === ""}
                                     onClick={() => handleListItemClick(attribute)}
                                     selected={selectedAttribute === attribute.name}>
-                                    <Grid container columns={12}>
+                                    <Grid container xs={12}>
                                         <Grid item xs={8}>
                                             <ListItemText primary={attribute.name}/>
                                         </Grid>
@@ -86,13 +87,12 @@ const TrumpCard = (props)  => {
                         />
                         <CardMedia
                             component="img"
-                            height="194"
                             image={trump.image}
                             alt={trump.name}
                         />
 
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body" color="text.secondary">
                                 {trump.cardContent}
                             </Typography>
                         </CardContent>

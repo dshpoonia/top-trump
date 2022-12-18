@@ -15,17 +15,17 @@ import HomePage from "./components/pages/HomePage";
 import NoPageFound from "./components/pages/NoPageFound";
 
 import PokemonHome from "./components/pokemon/PokemonHome";
+import {theme} from "./theme";
 
 class App extends Component {
 
   render() {
-    const theme = createTheme(this.props.settings);
-
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
           <Switch>
+            
             <Route exact path={"/"}  component={HomePage} />
             <Route exact path={"/pokemon"} component={PokemonHome} />
             <Route exact /*strict*/ component={NoPageFound} />
