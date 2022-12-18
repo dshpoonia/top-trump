@@ -5,7 +5,7 @@ import {initGame} from "../../actions/game-actions";
 import Container from '@mui/material/Container';
 import {GameStatus} from "../../reducers/gameReducer";
 
-class PokemonHome extends Component {
+class InitGameHome extends Component {
 
 
     componentDidMount() {
@@ -13,7 +13,8 @@ class PokemonHome extends Component {
             deckSize: 20,
             noOfBotPlayers: 1,
             noOfPlayers: 1,
-            status: GameStatus.PLAYING
+            status: GameStatus.PLAYING,
+            mode: this.props.mode
 
         })
     }
@@ -35,4 +36,4 @@ const mapDispatchToProps = {
     initGame
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PokemonHome);
+export default connect(mapStateToProps, mapDispatchToProps)(InitGameHome);

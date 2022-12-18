@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Srand from "seeded-rand";
-import InitLayout from "./InitLayout";
+import InitLayout from "../pokemon/InitLayout";
 import {initPlayer} from "../../actions/player-actions";
 import {connect} from "react-redux";
 import {teal} from "@mui/material/colors";

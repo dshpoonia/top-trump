@@ -8,11 +8,17 @@ export const GameStatus = {
 
 }
 
+export const GameMode = {
+    POKEMON: "POKEMON",
+    CRICKET: "CRICKET"
+}
+
 const initialState = {
     deckSize: 30,
     noOfBotPlayers: 1,
     noOfPlayers: 1,
-    status: GameStatus.NOT_STARTED
+    status: GameStatus.NOT_STARTED,
+    mode: GameMode.POKEMON
 
 };
 
