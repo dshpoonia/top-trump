@@ -28,6 +28,7 @@ class App extends Component {
             
             <Route exact path={"/"}  component={HomePage} />
             <Route exact path={"/pokemon"} component={PokemonHome} />
+            <Route exact path={"/cricket"} component={CricketHome} />
             <Route exact /*strict*/ component={NoPageFound} />
           </Switch>
         </Router>

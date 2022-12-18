@@ -12,6 +12,7 @@
     "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "cric-player-info": "^1.0.3",
     "gh-pages": "^4.0.0",
     "local-storage": "^1.4.2",
     "lodash": "^4.17.21",
