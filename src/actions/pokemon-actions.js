@@ -1,5 +1,5 @@
 import {teal} from "@mui/material/colors";
-import {capitalizeFirstLetter, getBackgroundColor} from "../services/pokemonOperations";
+import {capitalizeFirstLetter, getBackgroundColor} from "../services/PokemonOperations";
 import {INIT_LOADING_TRUMP, LOAD_TRUMP} from "./player-actions";
 import {GameStatus} from "../reducers/gameReducer";
 export function loadPokemon(payload){

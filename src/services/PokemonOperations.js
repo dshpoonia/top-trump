@@ -1,8 +1,8 @@
 import {blue, brown, green, grey, pink, purple, red, teal, yellow} from "@mui/material/colors";
 
-export const getMasterPokemonIndex = () =>{
+export const getPokemonTrumps = () =>{
     var arr = [];
-    for (let i = 1; i < 650; i++) {
+    for (let i = 3; i < 650; i++) {
         arr.push(i);
     }
 

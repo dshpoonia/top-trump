@@ -4,13 +4,14 @@ import InitLayout from "../pokemon/InitLayout";
 import {initPlayer} from "../../actions/player-actions";
 import {connect} from "react-redux";
 import {teal} from "@mui/material/colors";
-import {getMasterPokemonIndex} from "../../services/pokemonOperations";
+import {getTrumpCardsForGamePlay} from "../../services/GameModeOperations";
+
 
 class InitPlayers extends Component {
 
     componentDidMount()  {
         let playerMap = new Map();
-        let arr = getMasterPokemonIndex();
+        let arr = getTrumpCardsForGamePlay();
         const rnd = new Srand();
         arr = rnd.shuffle(arr);
 
