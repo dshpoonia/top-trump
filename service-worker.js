@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/top-trump/precache-manifest.f812f418a00fc3063e7ba88d99b2a3a5.js"
+  "/top-trump/precache-manifest.0b75f6cdf0dbc8c3ae19661da89d0001.js"
 );
 
 workbox.clientsClaim();

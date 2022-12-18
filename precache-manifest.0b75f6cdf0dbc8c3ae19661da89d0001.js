@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/top-trump/static/media/bot.4ee42d57.png"
   },
   {
-    "revision": "539211d69463dd773cd8ea10d95f66d3",
+    "revision": "52e12a5de5d6ed832ce31c6392188ffd",
     "url": "/top-trump/index.html"
   }
 ];
